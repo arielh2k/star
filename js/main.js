@@ -1,21 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function(){
-    //Login..
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function(){
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function(){
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder', '');
-});
-
 
 const badgeEl = document.querySelector('header .badges');
 
@@ -63,7 +45,7 @@ new Swiper('.promotion .swiper-container', {
         el: '.promotion .swiper-pagination',
         clickable: true
     },
-    navigation{
+    navigation: {
         prevEl: '.promotion .swiper-prev',
         nextEl: '.promotion .swiper-next'
     },
