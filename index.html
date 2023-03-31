@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      input[type="date"] {
+        width: 100px;
+        height: 48px;
+        border: 1px #ccc solid;
+        outline: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .t-date {
+        position: relative;
+        color: #3d3d3d;
+      }
+      .t-date::-webkit-clear-button,
+      .t-date::-webkit-inner-spin-button {
+        /* display: none; */
+      }
+    </style>
   </head>
   <body>
-    <input type="date" name="" id="" />
+    <input type="date" name="" id="" class="t-date" />
   </body>
 </html>
