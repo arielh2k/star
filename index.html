@@ -18,6 +18,7 @@
       .t-date {
         position: relative;
         color: #3d3d3d;
+        background-color: #fff;
       }
       .t-date::-webkit-clear-button,
       .t-date::-webkit-inner-spin-button {
@@ -31,8 +32,11 @@
       }
       @media all and(max-width: 768px) {
         .t-date {
-          background: #fff url("../images/floating3.png") 95% center / 24px 24px
-            no-repeat;
+          background-color: #fff;
+          background-image: url("../images/floating3.png");
+          background-position: 95% center;
+          background-size: 24px 24px;
+          background-position: no-repeat;
         }
         .t-date::-webkit-calendar-picker-indicator {
           display: none;
