@@ -84,19 +84,44 @@ let view1 = document.documentElement.clientHeight;
 let view2 = window.innerHeight;
 // 브라우저 창 크기
 let view3 = window.outerHeight;
+// window.addEventListener("resize", () => {
+//   console.log(view1);
+//   console.log(view2);
+//   console.log(view3);
+// });
 
 const inputItem = document.querySelectorAll("input");
 const header = document.querySelector(".member-header");
 
-inputItem.forEach((item) => {
-  item.addEventListener("focus", () => {
-    window.addEventListener("resize", () => {
-      let location = header.offsetTop;
-      //   console.log(view1);
-      //   console.log(view2);
-      //   console.log(view3);
-      let newViewport = view3 - view2;
-      header.classList.add("active");
-    });
-  });
-});
+// inputItem.forEach((item) => {
+//   item.addEventListener("focus", () => {
+//     window.addEventListener("resize", () => {
+//       let location = header.offsetTop;
+//       let newViewport = view3 - view2;
+//       if (view3 > view2) {
+//         header.classList.add("active");
+//       }
+//     });
+//   });
+// });
+visualViewport.addEventListener("resize", handleResize);
+function handleResize(event) {
+  const { height: visualViewportHeight } = event.target;
+  const eventName =
+    Math.ceil(visualViewportHeight) < window.innerHeight
+      ? "keyboardpen"
+      : "keyboardclose";
+  emitEvent.call(event, eventName);
+
+  function emitEvent(name) {
+    window.dispatchEvent(
+      new CustomEvent(name, {
+        detail: {
+          originalEvent: this,
+        },
+      }),
+      //어떤 행동을 할지
+      header.classList.add("active")
+    );
+  }
+}
