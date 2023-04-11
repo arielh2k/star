@@ -77,3 +77,26 @@
 //     };
 //   }
 // }
+
+// 문서의 viewport 크기
+let view1 = document.documentElement.clientHeight;
+// 브라우저 viewport 의 스크롤 포함 크기
+let view2 = window.innerHeight;
+// 브라우저 창 크기
+let view3 = window.outerHeight;
+
+const inputItem = document.querySelectorAll("input");
+const header = document.querySelector(".member-header");
+
+inputItem.forEach((item) => {
+  item.addEventListener("focus", () => {
+    window.addEventListener("resize", () => {
+      let location = header.offsetTop;
+      //   console.log(view1);
+      //   console.log(view2);
+      //   console.log(view3);
+      let newViewport = view3 - view2;
+      header.classList.add("active");
+    });
+  });
+});
