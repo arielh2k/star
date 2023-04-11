@@ -180,7 +180,7 @@ function scrollMove() {
   //   console.log(currentVisualViewport);
   //   console.log(windowViewport);
   if ((currentVisualViewport = windowViewport)) {
-    bodyEl.style.background = "#000";
+    bodyEl.style.position = "fixed";
   }
   //   if (htmlEl.classList.contains("keyboard--on")) {
   //     const scrollHeight = window.document.scrollingElement.scrollHeight;
