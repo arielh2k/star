@@ -104,7 +104,7 @@ const header = document.querySelector(".member-header");
 //     });
 //   });
 // });
-// $(document).ready(function () {});
+// $(document).ready(function () {
 // _bindSubPageEvents: function() {
 //     var self = this;
 //     var beforeScrollTop = 0,
@@ -139,35 +139,7 @@ const header = document.querySelector(".member-header");
 //     });
 //     self.winOff( eventNames.scrollstart+' '+eventNames.scroll );
 // }
-
-// function active() {
-//   scroll = window.scrollY;
-//   htmlEl.classList.add("keyboard--on");
-//   bodyEl.style.top = `${-scroll}px`;
-// }
-
-// function reset() {
-//   htmlEl.classList.remove("keyboard--on");
-//   bodyEl.style.removeProperty("top");
-//   window.scrollTo(0, scroll);
-// }
-
-// let iosAsideGap = 0;
-// let scroll;
-// const bodyEl = document.body;
-// const htmlEl = document.getElementsByTagName("html")[0];
-
-// function handleVisualViewportResize() {
-//   const currentVisualViewport = window.visualViewport.height;
-//   if (htmlEl.classList.contains("keyboard--on")) {
-//     const scrollHeight = window.document.documentElement.scrollHeight;
-//     iosAsideGap = scrollHeight - currentVisualViewport;
-//     window.scrollTo(0, iosAsideGap);
-//     bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
-//   }
-// }
-// window.visualViewport.onresize = handleVisualViewportResize;
-
+// });
 let iosAsideGap = 0;
 let scroll;
 let scrollDetail;
@@ -181,10 +153,13 @@ function scrollMove() {
   iosAsideGap = scrollHeight - currentVisualViewport;
   //   console.log(currentVisualViewport);
   //   console.log(windowViewport);
+  console.log(scrollHeight);
   if ((currentVisualViewport = windowViewport)) {
     headerEl.style.top = `${-(scroll - iosAsideGap)}px`;
     window.scrollTo(0, iosAsideGap);
-    console.log(iosAsideGap);
+    // console.log(iosAsideGap);
+  } else {
+    window.scrollTo(0, scroll);
   }
 
   //   if (htmlEl.classList.contains("keyboard--on")) {
@@ -196,13 +171,48 @@ function scrollMove() {
 }
 window.visualViewport.onresize = scrollMove;
 
-function active() {
-  scroll = window.scrollY;
-  htmlEl.classList.add("keyboard--on");
-  bodyEl.style.top = `${-scroll}px`;
-}
-function reset() {
-  htmlEl.classList.remove("keyboard--on");
-  bodyEl.style.removeProperty("top");
-  window.scrollTo(0, scroll);
-}
+// function active() {
+//   scroll = window.scrollY;
+//   htmlEl.classList.add("keyboard--on");
+//   bodyEl.style.top = `${-scroll}px`;
+// }
+// function reset() {
+//   htmlEl.classList.remove("keyboard--on");
+//   bodyEl.style.removeProperty("top");
+//   window.scrollTo(0, scroll);
+// }
+// $(document).ready(function () {
+//   bindSubPageEvents = (function () {
+//     var self = this;
+//     var beforeScrollTop = 0;
+//     var scrollTimer = null;
+
+//     var $headerPage = self.$headerPage;
+//     var eventNames = {
+//       scrollstart: "scrollstart" + this.eventNS,
+//       scroll: "scroll." + this.eventNS,
+//     };
+//     var checkHeader = function (_beforeScrollTop, $obj) {
+//       var isScrollDown = $obj.scrollTop() > _beforeScrollTop ? true : false;
+//       if (!$("#wrap").is(".main")) {
+//         if (isScrollDown) {
+//           $headerPage.removeClass("head_down").addClass("head_up");
+//         } else {
+//           $headerPage.removeClass("head_up").addClass("head_down");
+//         }
+//       }
+//     };
+
+//     $(window)
+//       .on(eventNames.scrollstart, function (e) {
+//         beforeScrollTop = $(window).scrollTop();
+//       })
+//       .on(eventNames.scroll, function () {
+//         clearTimeout(scrollTimer);
+//         scrollTimer = setTimeout(function () {
+//           checkHeader(beforeScrollTop, $(window));
+//         }, 20);
+//       });
+//     self.winOff(eventNames.scrollstart + " " + eventNames.scroll);
+//   })();
+// });
