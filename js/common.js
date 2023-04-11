@@ -177,11 +177,15 @@ const headerEl = document.querySelector(".member-header");
 function scrollMove() {
   let currentVisualViewport = window.visualViewport.height;
   let windowViewport = window.innerHeight;
+  let scrollHeight = window.document.scrollingElement.scrollHeight;
+  iosAsideGap = scrollHeight - currentVisualViewport;
   //   console.log(currentVisualViewport);
   //   console.log(windowViewport);
   if ((currentVisualViewport = windowViewport)) {
-    headerEl.style.position = "absolute";
+    headerEl.style.top = `${-(scroll - iosAsideGap)}px`;
+    console.log(iosAsideGap);
   }
+
   //   if (htmlEl.classList.contains("keyboard--on")) {
   //     const scrollHeight = window.document.scrollingElement.scrollHeight;
   //     iosAsideGap = scrollHeight - currentVisualViewport;
