@@ -1,4 +1,11 @@
 /* ================ 회원가입  ================ */
+.keyboard--on body {
+  position: fixed;
+}
+.dim {
+  opacity: 1;
+  pointer-events: initial;
+}
 .member-header {
   position: fixed;
   top: 0;

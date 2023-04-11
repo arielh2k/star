@@ -104,24 +104,66 @@ const header = document.querySelector(".member-header");
 //     });
 //   });
 // });
-visualViewport.addEventListener("resize", handleResize);
-function handleResize(event) {
-  const { height: visualViewportHeight } = event.target;
-  const eventName =
-    Math.ceil(visualViewportHeight) < window.innerHeight
-      ? "keyboardpen"
-      : "keyboardclose";
-  emitEvent.call(event, eventName);
+// $(document).ready(function () {});
+// _bindSubPageEvents: function() {
+//     var self = this;
+//     var beforeScrollTop = 0,
+//     scrollTimer = null,
+//     setSubBGPosition = function( y ) {
+//         var $subBG = $('.ui_sub_bg');
+//         var marginTop = Math.max($subBG.children().outerHeight(true), $subBG.outerHeight(true))-self.$header.outerHeight(true);
+//         marginTop += y || 0;
+//         $subBG.next().css( {'margin-top':marginTop} );
+//     }();
 
-  function emitEvent(name) {
-    window.dispatchEvent(
-      new CustomEvent(name, {
-        detail: {
-          originalEvent: this,
-        },
-      }),
-      //어떤 행동을 할지
-      header.classList.add("active")
-    );
+//     var $headerPage = self.$headerPage;
+//     var eventNames = { scrollstart:'scrollstart'+(this.eventNS), scroll:'scroll.'+(this.eventNS) };
+//     var checkHeader = function(_beforeScrollTop, $obj) {
+//         var isScrollDown = ( $obj.scrollTop() > _beforeScrollTop ) ? true: false;
+//         if(!$('#wrap').is('.main')){
+//             if( isScrollDown ) {
+//                 $headerPage.removeClass('head_down').addClass('head_up');
+//             } else {
+//                 $headerPage.removeClass('head_up').addClass('head_down');
+//             }
+//         }
+//     };
+
+//     $(window).on( eventNames.scrollstart, function( e ) {
+//         beforeScrollTop = $(window).scrollTop();
+//     }).on( eventNames.scroll, function() {
+//         clearTimeout( scrollTimer );
+//         scrollTimer = setTimeout( function() {
+//             checkHeader( beforeScrollTop, $(window) );
+//         }, 20 );
+//     });
+//     self.winOff( eventNames.scrollstart+' '+eventNames.scroll );
+// }
+
+function active() {
+  scroll = window.scrollY;
+  htmlEl.classList.add("keyboard--on");
+  bodyEl.style.top = `${-scroll}px`;
+}
+
+function reset() {
+  htmlEl.classList.remove("keyboard--on");
+  bodyEl.style.removeProperty("top");
+  window.scrollTo(0, scroll);
+}
+
+let iosAsideGap = 0;
+let scroll;
+const bodyEl = document.body;
+const htmlEl = document.getElementsByTagName("html")[0];
+
+function handleVisualViewportResize() {
+  const currentVisualViewport = window.visualViewport.height;
+  if (htmlEl.classList.contains("keyboard--on")) {
+    const scrollHeight = window.document.documentElement.scrollHeight;
+    iosAsideGap = scrollHeight - currentVisualViewport;
+    window.scrollTo(0, iosAsideGap);
+    bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
   }
 }
+window.visualViewport.onresize = handleVisualViewportResize;
