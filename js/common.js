@@ -16,15 +16,15 @@
 //     searchInputEl.setAttribute('placeholder', '');
 // });
 
-$(document).ready(function () {
-  $("input").each(function () {
-    $(this).bind("focus", function () {
-      $(".member-header").css("position", "absolute");
-      console.log("absolute");
-    });
-    $(this).bind("blur", function () {
-      $(".member-header").css("position", "fixed");
-      console.log("fixed");
-    });
-  });
-});
+// $(document).ready(function () {
+//   $("input").each(function () {
+//     $(this).bind("focus", function () {
+//       $(".member-header").css("position", "absolute");
+//       console.log("absolute");
+//     });
+//     $(this).bind("blur", function () {
+//       $(".member-header").css("position", "fixed");
+//       console.log("fixed");
+//     });
+//   });
+// });
