@@ -183,6 +183,7 @@ function scrollMove() {
   //   console.log(windowViewport);
   if ((currentVisualViewport = windowViewport)) {
     headerEl.style.top = `${-(scroll - iosAsideGap)}px`;
+    window.scrollTo(0, iosAsideGap);
     console.log(iosAsideGap);
   }
 
