@@ -140,30 +140,64 @@ const header = document.querySelector(".member-header");
 //     self.winOff( eventNames.scrollstart+' '+eventNames.scroll );
 // }
 
+// function active() {
+//   scroll = window.scrollY;
+//   htmlEl.classList.add("keyboard--on");
+//   bodyEl.style.top = `${-scroll}px`;
+// }
+
+// function reset() {
+//   htmlEl.classList.remove("keyboard--on");
+//   bodyEl.style.removeProperty("top");
+//   window.scrollTo(0, scroll);
+// }
+
+// let iosAsideGap = 0;
+// let scroll;
+// const bodyEl = document.body;
+// const htmlEl = document.getElementsByTagName("html")[0];
+
+// function handleVisualViewportResize() {
+//   const currentVisualViewport = window.visualViewport.height;
+//   if (htmlEl.classList.contains("keyboard--on")) {
+//     const scrollHeight = window.document.documentElement.scrollHeight;
+//     iosAsideGap = scrollHeight - currentVisualViewport;
+//     window.scrollTo(0, iosAsideGap);
+//     bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
+//   }
+// }
+// window.visualViewport.onresize = handleVisualViewportResize;
+
+let iosAsideGap = 0;
+let scroll;
+let scrollDetail;
+const bodyEl = document.body;
+const htmlEl = document.getElementsByTagName("html")[0];
+const headerEl = document.querySelector(".member-header");
+function scrollMove() {
+  let currentVisualViewport = window.visualViewport.height;
+  let windowViewport = window.innerHeight;
+  //   console.log(currentVisualViewport);
+  //   console.log(windowViewport);
+  if ((currentVisualViewport = windowViewport)) {
+    bodyEl.style.background = "#000";
+  }
+  //   if (htmlEl.classList.contains("keyboard--on")) {
+  //     const scrollHeight = window.document.scrollingElement.scrollHeight;
+  //     iosAsideGap = scrollHeight - currentVisualViewport;
+  //     window.scrollTo(0, iosAsideGap);
+  //     bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
+  //   }
+}
+window.visualViewport.onresize = scrollMove;
+
 function active() {
   scroll = window.scrollY;
   htmlEl.classList.add("keyboard--on");
   bodyEl.style.top = `${-scroll}px`;
 }
-
 function reset() {
   htmlEl.classList.remove("keyboard--on");
   bodyEl.style.removeProperty("top");
   window.scrollTo(0, scroll);
 }
-
-let iosAsideGap = 0;
-let scroll;
-const bodyEl = document.body;
-const htmlEl = document.getElementsByTagName("html")[0];
-
-function handleVisualViewportResize() {
-  const currentVisualViewport = window.visualViewport.height;
-  if (htmlEl.classList.contains("keyboard--on")) {
-    const scrollHeight = window.document.documentElement.scrollHeight;
-    iosAsideGap = scrollHeight - currentVisualViewport;
-    window.scrollTo(0, iosAsideGap);
-    bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
-  }
-}
-window.visualViewport.onresize = handleVisualViewportResize;
