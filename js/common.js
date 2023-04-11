@@ -28,3 +28,52 @@
 //     });
 //   });
 // });
+
+// if ("VisualViewport" in window) {
+//   visualViewport.addEventListener("resize", handleResize);
+//   function handleResize(event) {
+//     const { height: visualViewportHeight } = event.target;
+//     const eventName =
+//       Math.ceil(visualViewportHeight) < window.innerHeight
+//         ? "keyboardopen"
+//         : "keyboardclose";
+//     emitEvent.call(event, eventName);
+//   }
+//   function emitEvent(name) {
+//     window.dispatchEvent(
+//       new CustomEvent(name, {
+//         detail: {
+//           originalEvent: this,
+//         },
+//       })
+//     );
+//   }
+// }
+if ("VisualViewport" in window) {
+  const debouncedHandleResize = debounce(handleResize, 100);
+  visualViewport.addEventListener("resize", debouncedHandleResize);
+  function handleResize(event) {
+    const { height: visualViewportHeight } = event.target;
+    const eventName =
+      Math.ceil(visualViewportHeight) < window.innerHeight
+        ? "keyboardopen"
+        : "keyboardclose";
+    emitEvent.call(event, eventName);
+  }
+  function emitEvent(name) {
+    window.dispatchEvent(
+      new CustomEvent(name, {
+        detail: {
+          originalEvent: this,
+        },
+      })
+    );
+  }
+  function debounce(fn, wait) {
+    let cancelId = null;
+    return function debounced(...args) {
+      clearTimeout(cancelId);
+      cancelId = setTimeout(fn.bind(this, ...args), wait);
+    };
+  }
+}
