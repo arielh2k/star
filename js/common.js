@@ -10,6 +10,9 @@ if (ios) {
       formControl.forEach((inp) => {
         inp.blur();
       });
+    } else if (window.matchMedia("(orientation: portrait)").matches) {
+      window.scrollTo(0, 0);
+      window.document.body.scrollTop = 0;
     }
   });
 }
