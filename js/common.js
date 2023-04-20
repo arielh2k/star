@@ -3,22 +3,22 @@ let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
 const formControl = document.querySelectorAll("input");
 
-// var ios = navigator.userAgent.match(/(iPod|iPhone)/);
-// if (ios) {
-//   window.addEventListener("orientationchange", (event) => {
-//     window.addEventListener("resize", () => {
-//       if (window.innerWidth > window.innerHeight) {
-//         landscapeDim();
-//       }
-//     });
-//   });
-// }
+var ios = navigator.userAgent.match(/(iPod|iPhone)/);
+if (ios) {
+  window.addEventListener("orientationchange", () => {
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      formControl.forEach((inp) => {
+        inp.blur();
+      });
+    }
+  });
+}
 
-var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
   ? true
   : false;
 
-if (isMobile) {
+if (aos) {
   window.addEventListener("resize", () => {
     if (window.matchMedia("(orientation: landscape)").matches) {
       formControl.forEach((inp) => {
