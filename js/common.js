@@ -10,10 +10,10 @@ if (isMobile) {
 
   if (orDim) {
     window.addEventListener("resize", () => {
+      resizeDelay();
       let newWidth = window.innerWidth;
       if (newWidth !== bodyWidth) {
         bodyWidth = newWidth;
-        resizeDelay();
         landscapeDim();
       }
       if (bodyWidth > 1000) {
@@ -42,7 +42,7 @@ function resizeDelay() {
   let delay = 100;
   let timer = null;
   clearTimeout(timer);
-  timer = setTimeout(function () {
+  timer = setTimeout(() => {
     document.location.reload();
   }, delay);
 }
