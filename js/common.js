@@ -1,7 +1,7 @@
-// let bodyWidth = window.innerWidth;
-// let orDim = document.querySelector(".orientation-dim");
-// let bodysec = document.querySelector("body");
-// const formControl = document.querySelectorAll("input");
+let bodyWidth = window.innerWidth;
+let orDim = document.querySelector(".orientation-dim");
+let bodysec = document.querySelector("body");
+const formControl = document.querySelectorAll("input");
 
 // var ios = navigator.userAgent.match(/(iPod|iPhone)/);
 // if (ios) {
@@ -14,40 +14,46 @@
 //   });
 // }
 
-// var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
-//   ? true
-//   : false;
+var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+  ? true
+  : false;
 
+if (isMobile) {
+  if (window.matchMedia("(orientation: landscape)").matches) {
+    formControl.forEach((inp) => {
+      inp.blur();
+    });
+  }
+}
 // if (isMobile) {
-//   if (orDim) {
-//     window.addEventListener("resize", () => {
-//       let newWidth = window.innerWidth;
-//       if (newWidth !== bodyWidth) {
-//         bodyWidth = newWidth;
-//         landscapeDim();
-//       }
-//       if (bodyWidth > 1000) {
-//         orDim.classList.remove("is-show");
-//       }
-//     });
+//     if (orDim) {
+//       window.addEventListener("resize", () => {
+//         let newWidth = window.innerWidth;
+//         if (newWidth !== bodyWidth) {
+//           bodyWidth = newWidth;
+//           landscapeDim();
+//         }
+//         if (bodyWidth > 1000) {
+//           orDim.classList.remove("is-show");
+//         }
+//       });
 
-//     function landscapeDim() {
-//       if (window.matchMedia("(orientation: landscape)").matches) {
-//         orDim.classList.add("is-show");
-//         bodysec.style.overflow = "hidden";
-//         formControl.forEach((inp) => {
-//           inp.blur();
-//           console.log(inp);
-//         });
-//       } else if (window.matchMedia("(orientation: portrait)").matches) {
-//         orDim.classList.remove("is-show");
-//         bodysec.removeAttribute("style");
+//       function landscapeDim() {
+//         if (window.matchMedia("(orientation: landscape)").matches) {
+//           orDim.classList.add("is-show");
+//           bodysec.style.overflow = "hidden";
+//           formControl.forEach((inp) => {
+//             inp.blur();
+//             console.log(inp);
+//           });
+//         } else if (window.matchMedia("(orientation: portrait)").matches) {
+//           orDim.classList.remove("is-show");
+//           bodysec.removeAttribute("style");
+//         }
 //       }
+//       landscapeDim();
 //     }
-//     landscapeDim();
 //   }
-// }
-
 // function resizeDelay() {
 //   let delay = 100;
 //   let timer = null;
