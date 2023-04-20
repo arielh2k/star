@@ -25,15 +25,9 @@ if (isMobile) {
       if (window.matchMedia("(orientation: landscape)").matches) {
         orDim.classList.add("is-show");
         bodysec.style.overflow = "hidden";
-        formControl.forEach((inp) => {
-          inp.blur();
-        });
       } else if (window.matchMedia("(orientation: portrait)").matches) {
         orDim.classList.remove("is-show");
         bodysec.removeAttribute("style");
-        formControl.forEach((inp) => {
-          inp.foucs();
-        });
       }
     }
     landscapeDim();
