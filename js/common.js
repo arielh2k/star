@@ -27,11 +27,13 @@ if (isMobile) {
         bodysec.style.overflow = "hidden";
         formControl.forEach((inp) => {
           inp.blur();
-          console.log(inp);
         });
       } else if (window.matchMedia("(orientation: portrait)").matches) {
         orDim.classList.remove("is-show");
         bodysec.removeAttribute("style");
+        formControl.forEach((inp) => {
+          inp.foucs();
+        });
       }
     }
     landscapeDim();
