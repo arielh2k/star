@@ -9,11 +9,12 @@ if (isMobile) {
   const formControl = document.querySelectorAll("input");
 
   if (orDim) {
+    resizeDelay();
     window.addEventListener("resize", () => {
-      resizeDelay();
       let newWidth = window.innerWidth;
       if (newWidth !== bodyWidth) {
         bodyWidth = newWidth;
+
         landscapeDim();
       }
       if (bodyWidth > 1000) {
