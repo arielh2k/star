@@ -19,11 +19,13 @@ var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
   : false;
 
 if (isMobile) {
-  if (window.matchMedia("(orientation: landscape)").matches) {
-    formControl.forEach((inp) => {
-      inp.blur();
-    });
-  }
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      formControl.forEach((inp) => {
+        inp.blur();
+      });
+    }
+  });
 }
 // if (isMobile) {
 //     if (orDim) {
