@@ -13,6 +13,7 @@ if (isMobile) {
       let newWidth = window.innerWidth;
       if (newWidth !== bodyWidth) {
         bodyWidth = newWidth;
+        resizeDelay();
         landscapeDim();
       }
       if (bodyWidth > 1000) {
@@ -29,7 +30,6 @@ if (isMobile) {
           console.log(inp);
         });
       } else if (window.matchMedia("(orientation: portrait)").matches) {
-        resizeDelay();
         orDim.classList.remove("is-show");
         bodysec.removeAttribute("style");
       }
