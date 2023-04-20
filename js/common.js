@@ -1,218 +1,200 @@
-// const searchEl = document.querySelector('.search');
-// const searchInputEl = searchEl.querySelector('input');
+var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
-// searchEl.addEventListener('click', function(){
+if (isMobile) {
+    let bodyWidth = window.innerWidth;
+    let orDim = document.querySelector(".orientation-dim");
+    let bodysec = document.querySelector("body");
+    const formControl = document.querySelectorAll("input");
 
-//     searchInputEl.focus();
-// });
+    if (orDim) {
+        window.addEventListener("resize", () => {
+            let newWidth = window.innerWidth;
+            if (newWidth !== bodyWidth) {
+                bodyWidth = newWidth;
+                landscapeDim();
+            }
+            if (bodyWidth > 1000) {
+                orDim.classList.remove("is-show");
+            }
+        });
 
-// searchInputEl.addEventListener('focus', function(){
-//     searchEl.classList.add('focused');
-//     searchInputEl.setAttribute('placeholder', '통합검색');
-// });
-
-// searchInputEl.addEventListener('blur', function(){
-//     searchEl.classList.remove('focused');
-//     searchInputEl.setAttribute('placeholder', '');
-// });
-
-// $(document).ready(function () {
-//   $("input").each(function () {
-//     $(this).bind("focus", function () {
-//       $(".member-header").css("position", "absolute");
-//       console.log("absolute");
-//     });
-//     $(this).bind("blur", function () {
-//       $(".member-header").css("position", "fixed");
-//       console.log("fixed");
-//     });
-//   });
-// });
-
-// if ("VisualViewport" in window) {
-//   visualViewport.addEventListener("resize", handleResize);
-//   function handleResize(event) {
-//     const { height: visualViewportHeight } = event.target;
-//     const eventName =
-//       Math.ceil(visualViewportHeight) < window.innerHeight
-//         ? "keyboardopen"
-//         : "keyboardclose";
-//     emitEvent.call(event, eventName);
-//   }
-//   function emitEvent(name) {
-//     window.dispatchEvent(
-//       new CustomEvent(name, {
-//         detail: {
-//           originalEvent: this,
-//         },
-//       })
-//     );
-//   }
-// }
-// if ("VisualViewport" in window) {
-//   const debouncedHandleResize = debounce(handleResize, 100);
-//   visualViewport.addEventListener("resize", debouncedHandleResize);
-//   function handleResize(event) {
-//     const { height: visualViewportHeight } = event.target;
-//     const eventName =
-//       Math.ceil(visualViewportHeight) < window.innerHeight
-//         ? "keyboardopen"
-//         : "keyboardclose";
-//     emitEvent.call(event, eventName);
-//   }
-//   function emitEvent(name) {
-//     window.dispatchEvent(
-//       new CustomEvent(name, {
-//         detail: {
-//           originalEvent: this,
-//         },
-//       })
-//     );
-//   }
-//   function debounce(fn, wait) {
-//     let cancelId = null;
-//     return function debounced(...args) {
-//       clearTimeout(cancelId);
-//       cancelId = setTimeout(fn.bind(this, ...args), wait);
-//     };
-//   }
-// }
-
-// 문서의 viewport 크기
-let view1 = document.documentElement.clientHeight;
-// 브라우저 viewport 의 스크롤 포함 크기
-let view2 = window.innerHeight;
-// 브라우저 창 크기
-let view3 = window.outerHeight;
-// window.addEventListener("resize", () => {
-//   console.log(view1);
-//   console.log(view2);
-//   console.log(view3);
-// });
-
-const inputItem = document.querySelectorAll("input");
-const header = document.querySelector(".member-header");
-
-// inputItem.forEach((item) => {
-//   item.addEventListener("focus", () => {
-//     window.addEventListener("resize", () => {
-//       let location = header.offsetTop;
-//       let newViewport = view3 - view2;
-//       if (view3 > view2) {
-//         header.classList.add("active");
-//       }
-//     });
-//   });
-// });
-// $(document).ready(function () {
-// _bindSubPageEvents: function() {
-//     var self = this;
-//     var beforeScrollTop = 0,
-//     scrollTimer = null,
-//     setSubBGPosition = function( y ) {
-//         var $subBG = $('.ui_sub_bg');
-//         var marginTop = Math.max($subBG.children().outerHeight(true), $subBG.outerHeight(true))-self.$header.outerHeight(true);
-//         marginTop += y || 0;
-//         $subBG.next().css( {'margin-top':marginTop} );
-//     }();
-
-//     var $headerPage = self.$headerPage;
-//     var eventNames = { scrollstart:'scrollstart'+(this.eventNS), scroll:'scroll.'+(this.eventNS) };
-//     var checkHeader = function(_beforeScrollTop, $obj) {
-//         var isScrollDown = ( $obj.scrollTop() > _beforeScrollTop ) ? true: false;
-//         if(!$('#wrap').is('.main')){
-//             if( isScrollDown ) {
-//                 $headerPage.removeClass('head_down').addClass('head_up');
-//             } else {
-//                 $headerPage.removeClass('head_up').addClass('head_down');
-//             }
-//         }
-//     };
-
-//     $(window).on( eventNames.scrollstart, function( e ) {
-//         beforeScrollTop = $(window).scrollTop();
-//     }).on( eventNames.scroll, function() {
-//         clearTimeout( scrollTimer );
-//         scrollTimer = setTimeout( function() {
-//             checkHeader( beforeScrollTop, $(window) );
-//         }, 20 );
-//     });
-//     self.winOff( eventNames.scrollstart+' '+eventNames.scroll );
-// }
-// });
-let iosAsideGap = 0;
-let scroll;
-let scrollDetail;
-const bodyEl = document.body;
-const htmlEl = document.getElementsByTagName("html")[0];
-const headerEl = document.querySelector(".member-header");
-function scrollMove() {
-  let currentVisualViewport = window.visualViewport.height;
-  let windowViewport = window.innerHeight;
-  let scrollHeight = window.document.scrollingElement.scrollHeight;
-  iosAsideGap = scrollHeight - currentVisualViewport;
-  //   console.log(currentVisualViewport);
-  //   console.log(windowViewport);
-  console.log(scrollHeight);
-  if ((currentVisualViewport = windowViewport)) {
-    headerEl.style.top = `${-(scroll - iosAsideGap)}px`;
-    window.scrollTo(0, iosAsideGap);
-    // console.log(iosAsideGap);
-  } else {
-    window.scrollTo(0, scroll);
-  }
-
-  //   if (htmlEl.classList.contains("keyboard--on")) {
-  //     const scrollHeight = window.document.scrollingElement.scrollHeight;
-  //     iosAsideGap = scrollHeight - currentVisualViewport;
-  //     window.scrollTo(0, iosAsideGap);
-  //     bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
-  //   }
+        function landscapeDim() {
+            if (window.matchMedia("(orientation: landscape)").matches) {
+                orDim.classList.add("is-show");
+                bodysec.style.overflow = "hidden";
+                formControl.forEach((inp) => {
+                    inp.blur();
+                    console.log(inp);
+                });
+            } else if (window.matchMedia("(orientation: portrait)").matches) {
+                orDim.classList.remove("is-show");
+                bodysec.removeAttribute("style");
+            }
+        }
+        landscapeDim();
+    }
 }
-window.visualViewport.onresize = scrollMove;
 
-// function active() {
-//   scroll = window.scrollY;
-//   htmlEl.classList.add("keyboard--on");
-//   bodyEl.style.top = `${-scroll}px`;
+// GNG
+const headerLayout = document.querySelector(".header-layout");
+const gnbItems = document.querySelectorAll(".gnb-item");
+
+gnbItems.forEach((item) => {
+    const dropdown = item.classList.contains("dropdown");
+    if (window.matchMedia("(max-width: 540px)").matches) {
+        item.addEventListener("click", () => {
+            gnbItems.forEach((menu) => {
+                menu.classList.remove("active");
+            });
+            if (dropdown) {
+                item.classList.toggle("active");
+            }
+        });
+    } else {
+        item.addEventListener("mouseover", () => {
+            gnbItems.forEach((menu) => {
+                menu.classList.remove("active");
+            });
+            if (dropdown) {
+                item.classList.add("active");
+            }
+        });
+        headerLayout.addEventListener("mouseleave", () => {
+            item.classList.remove("active");
+        });
+    }
+});
+
+// function resizeDelay() {
+//     let delay = 100;
+//     let timer = null;
+//     clearTimeout(timer);
+//     timer = setTimeout(function () {
+//         document.location.reload();
+//     }, delay);
 // }
-// function reset() {
-//   htmlEl.classList.remove("keyboard--on");
-//   bodyEl.style.removeProperty("top");
-//   window.scrollTo(0, scroll);
-// }
-// $(document).ready(function () {
-//   bindSubPageEvents = (function () {
-//     var self = this;
-//     var beforeScrollTop = 0;
-//     var scrollTimer = null;
 
-//     var $headerPage = self.$headerPage;
-//     var eventNames = {
-//       scrollstart: "scrollstart" + this.eventNS,
-//       scroll: "scroll." + this.eventNS,
-//     };
-//     var checkHeader = function (_beforeScrollTop, $obj) {
-//       var isScrollDown = $obj.scrollTop() > _beforeScrollTop ? true : false;
-//       if (!$("#wrap").is(".main")) {
-//         if (isScrollDown) {
-//           $headerPage.removeClass("head_down").addClass("head_up");
-//         } else {
-//           $headerPage.removeClass("head_up").addClass("head_down");
-//         }
-//       }
-//     };
+// mobile Fullmenu
+const openBtn = document.querySelector(".btn-drawer-open");
+const closeBtn = document.querySelector(".btn-drawer-close");
+const fullMenu = document.querySelector(".header-response");
+const dim = document.createElement("div");
 
-//     $(window)
-//       .on(eventNames.scrollstart, function (e) {
-//         beforeScrollTop = $(window).scrollTop();
-//       })
-//       .on(eventNames.scroll, function () {
-//         clearTimeout(scrollTimer);
-//         scrollTimer = setTimeout(function () {
-//           checkHeader(beforeScrollTop, $(window));
-//         }, 20);
-//       });
-//     self.winOff(eventNames.scrollstart + " " + eventNames.scroll);
-//   })();
-// });
+openBtn.addEventListener("click", fullMenuOpen);
+closeBtn.addEventListener("click", fullMenuClose);
+
+function fullMenuOpen() {
+    dim.classList.add("fullmenu-dim");
+    fullMenu.classList.add("active");
+    fullMenu.prepend(dim);
+}
+function fullMenuClose() {
+    if (dim.classList.contains("fullmenu-dim")) {
+        fullMenu.classList.remove("active");
+        fullMenu.removeChild(dim);
+    }
+}
+
+// tab
+const tabWrap = document.querySelector(".tab-wrap");
+const tabs = document.querySelector(".tabs");
+const tabBtns = document.querySelectorAll(".tabs .tab-btn");
+const tabPanel = document.querySelectorAll(".tab-wrap .tab-content");
+if (tabWrap) {
+    tabs.addEventListener("click", (e) => {
+        const id = e.target.dataset.id;
+        if (id) {
+            tabBtns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+            e.target.classList.add("active");
+            tabPanel.forEach((panel) => {
+                panel.classList.remove("active");
+            });
+            const el = document.getElementById(id);
+            el.classList.add("active");
+        }
+    });
+}
+
+// accordian
+const accordianWrap = document.querySelector(".type-accordian");
+const accordians = document.querySelectorAll(".bbs-list.type-accordian .list-item");
+if (accordianWrap) {
+    accordians.forEach((accordian) => {
+        const accBtn = accordian.querySelector(".acc-toggle");
+        accBtn.addEventListener("click", () => {
+            // accordians.forEach((item) => {
+            //     if(item !== accordian) {
+            //         item.classList.remove('active')
+            //     }
+            // })
+            accordian.classList.toggle("active");
+        });
+    });
+}
+
+const selectContainer = document.querySelector(".custom-select");
+const selectBox = document.querySelector(".custom-select");
+const selectBtn = document.querySelector(".select-btn");
+const options = document.querySelectorAll(".option-item");
+if (selectContainer) {
+    const handleSelect = (item) => {
+        selectBtn.innerHTML = item.textContent;
+        selectBox.classList.remove("active");
+    };
+    options.forEach((option) => {
+        option.addEventListener("click", () => {
+            handleSelect(option);
+        });
+    });
+
+    selectBtn.addEventListener("click", () => {
+        if (selectBox.classList.contains("active")) {
+            selectBox.classList.remove("active");
+        } else {
+            selectBox.classList.add("active");
+        }
+    });
+}
+
+// modal
+const modalSection = document.querySelector("body");
+const modals = document.querySelectorAll(".modal");
+const modalClose = document.querySelectorAll(".modal-close");
+if (modalSection) {
+    modalSection.addEventListener("click", (e) => {
+        const modalId = e.target.dataset.modal;
+        if (modalId) {
+            const modalLayer = document.getElementById(modalId);
+            modalLayer.classList.add("is-show");
+            modalSection.style.overflow = "hidden";
+        }
+    });
+
+    modalClose.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            modals.forEach((modal) => {
+                modal.classList.remove("is-show");
+                modalSection.removeAttribute("style");
+            });
+        });
+    });
+}
+
+// 로그인 팝업 clear 2023-03-29
+const loginField = document.querySelectorAll(".form-item");
+loginField.forEach((field) => {
+    const inputItem = field.querySelector(".inp-unset");
+    const value = inputItem.value;
+    const clear = field.querySelector(".btn-input-clear");
+
+    inputItem.addEventListener("keydown", () => {
+        clear.style.display = "block";
+        clear.classList.remove("is-hide");
+    });
+    clear.addEventListener("click", () => {
+        inputItem.value = "";
+        clear.classList.add("is-hide");
+    });
+});
