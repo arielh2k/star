@@ -41,7 +41,7 @@ if (isMobile) {
 }
 
 function resizeDelay() {
-  let delay = 10;
+  let delay = 100;
   let timer = null;
   clearTimeout(timer);
   timer = setTimeout(() => {
