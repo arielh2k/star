@@ -6344,11 +6344,11 @@ html.popup {
   line-height: 3.5rem;
   text-align: center;
 }
-/* @media all and (max-width: 540px) {
-    .orientation-dim {
-        display: none !important;
-    }
-} */
+@media all and (max-width: 540px) {
+  .orientation-dim {
+    display: none !important;
+  }
+}
 
 /* popup 휴면 계정 해제 */
 .dm-date {
