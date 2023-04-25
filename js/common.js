@@ -11,8 +11,9 @@ if (ios) {
         inp.blur();
       });
     } else if (window.matchMedia("(orientation: portrait)").matches) {
-      window.scrollTo(0, 0);
-      window.document.body.scrollTop = 0;
+      resizeDelay();
+      // window.scrollTo(0, 0);
+      // window.document.body.scrollTop = 0;
     }
   });
 }
@@ -29,6 +30,16 @@ if (aos) {
     }
   });
 }
+
+function resizeDelay() {
+  let delay = 100;
+  let timer = null;
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    document.location.reload();
+  }, delay);
+}
+
 // if (isMobile) {
 //     if (orDim) {
 //       window.addEventListener("resize", () => {
