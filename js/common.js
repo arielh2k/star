@@ -5,15 +5,15 @@ const formControl = document.querySelectorAll("input");
 
 var ios = navigator.userAgent.match(/(iPod|iPhone)/);
 if (ios) {
-  screen.addEventListener("orientationchange", () => {
-    screen.addEventListener("resize", () => {
+  window.addEventListener("orientationchange", () => {
+    window.addEventListener("resize", () => {
       if (window.matchMedia("(orientation: landscape)").matches) {
         formControl.forEach((inp) => {
           inp.blur();
         });
-      } else if (screen.matchMedia("(orientation: portrait)").matches) {
-        screen.scrollTo(0, 0);
-        screen.document.body.scrollTop = 0;
+      } else if (window.matchMedia("(orientation: portrait)").matches) {
+        window.scrollTo(0, 0);
+        window.document.body.scrollTop = 0;
       }
     });
   });
@@ -24,8 +24,8 @@ var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
   : false;
 
 if (aos) {
-  screen.addEventListener("resize", () => {
-    if (screen.matchMedia("(orientation: landscape)").matches) {
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(orientation: landscape)").matches) {
       formControl.forEach((inp) => {
         inp.blur();
       });
