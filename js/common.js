@@ -8,7 +8,7 @@ if (isMobile) {
   window.addEventListener("orientationchange", () => {
     window.addEventListener("resize", () => {
       if (window.matchMedia("(orientation: landscape)").matches) {
-        resizeDelay();
+        // resizeDelay();
         formControl.forEach((inp) => {
           inp.blur();
         });
