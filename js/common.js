@@ -8,12 +8,12 @@ var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
 if (isMobile) {
   window.addEventListener("orientationchange", () => {
     window.addEventListener("resize", () => {
+      resizeDelay();
       if (window.matchMedia("(orientation: landscape)").matches) {
         formControl.forEach((inp) => {
           inp.blur();
         });
       } else if (window.matchMedia("(orientation: portrait)").matches) {
-        resizeDelay;
         window.scrollTo(0, 0);
         window.document.body.scrollTop = 0;
       }
