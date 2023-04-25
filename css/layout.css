@@ -6349,7 +6349,7 @@ html.popup {
     text-align: center;
   }
 }
-@media screen and (orientation: portrait) {
+@media all and (orientation: portrait) {
   .orientation-dim {
     display: none;
   }

@@ -17,10 +17,7 @@ if (ios) {
     }
   });
 }
-var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
-  ? true
-  : false;
-
+var aos = /Android|iPod|BlackBerry/i.test(navigator.userAgent);
 if (aos) {
   window.addEventListener("resize", () => {
     if (window.matchMedia("(orientation: landscape)").matches) {
