@@ -2,7 +2,8 @@ let bodyWidth = window.innerWidth;
 let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
 const formControl = document.querySelectorAll("input");
-
+let delay = 100;
+let timer = null;
 var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
 if (isMobile) {
   window.addEventListener("orientationchange", () => {
@@ -12,6 +13,7 @@ if (isMobile) {
           inp.blur();
         });
       } else if (window.matchMedia("(orientation: portrait)").matches) {
+        resizeDelay;
         window.scrollTo(0, 0);
         window.document.body.scrollTop = 0;
       }
@@ -19,8 +21,6 @@ if (isMobile) {
   });
 }
 function resizeDelay() {
-  let delay = 100;
-  let timer = null;
   clearTimeout(timer);
   timer = setTimeout(() => {
     document.location.reload();
