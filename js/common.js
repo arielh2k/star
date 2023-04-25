@@ -3,8 +3,8 @@ let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
 const formControl = document.querySelectorAll("input");
 
-var ios = navigator.userAgent.match(/(iPod|iPhone)/);
-if (ios) {
+var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
+if (isMobile) {
   window.addEventListener("orientationchange", () => {
     window.addEventListener("resize", () => {
       if (window.matchMedia("(orientation: landscape)").matches) {
@@ -19,19 +19,19 @@ if (ios) {
   });
 }
 
-var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
-  ? true
-  : false;
+// var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+//   ? true
+//   : false;
 
-if (aos) {
-  window.addEventListener("resize", () => {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      formControl.forEach((inp) => {
-        inp.blur();
-      });
-    }
-  });
-}
+// if (aos) {
+//   window.addEventListener("resize", () => {
+//     if (window.matchMedia("(orientation: landscape)").matches) {
+//       formControl.forEach((inp) => {
+//         inp.blur();
+//       });
+//     }
+//   });
+// }
 // if (isMobile) {
 //     if (orDim) {
 //       window.addEventListener("resize", () => {
