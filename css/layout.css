@@ -6328,12 +6328,7 @@ html.popup {
 .orientation-dim {
   display: none;
 }
-/* @media (orientation: portrait) {
-  .orientation-dim {
-    display: none;
-  }
-}
-@media (orientation: landscape) {
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) {
   .orientation-dim {
     display: block;
   }
@@ -6354,11 +6349,37 @@ html.popup {
     text-align: center;
   }
 }
+@media screen and (orientation: portrait) {
+  .orientation-dim {
+    display: none;
+  }
+}
+/* @media screen and (orientation: landscape) {
+  .orientation-dim {
+    display: block;
+  }
+  .orientation-dim .inner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-1st);
+    z-index: 9000;
+  }
+  .orientation-dim span {
+    font-size: 2.4rem;
+    color: var(--color-white);
+    line-height: 3.5rem;
+    text-align: center;
+  }
+} */
 @media all and (min-width: 1024px) {
   .orientation-dim {
     display: none;
   }
-} */
+}
 
 /* popup 휴면 계정 해제 */
 .dm-date {

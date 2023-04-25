@@ -3,30 +3,18 @@ let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
 const formControl = document.querySelectorAll("input");
 
-var isMobile = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
-if (isMobile) {
+var ios = navigator.userAgent.match(/(iPod|iPhone)/);
+if (ios) {
   window.addEventListener("orientationchange", () => {
     if (window.matchMedia("(orientation: landscape)").matches) {
-      resizeDelay();
-      orDim.classList.add("is-show");
       formControl.forEach((inp) => {
         inp.blur();
       });
     } else if (window.matchMedia("(orientation: portrait)").matches) {
-      resizeDelay();
-      orDim.classList.remove("is-show");
       window.scrollTo(0, 0);
       window.document.body.scrollTop = 0;
     }
   });
-}
-function resizeDelay() {
-  let delay = 100;
-  let timer = null;
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    document.location.reload();
-  }, delay);
 }
 // var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
 //   ? true
@@ -70,6 +58,14 @@ function resizeDelay() {
 //       landscapeDim();
 //     }
 //   }
+// function resizeDelay() {
+//   let delay = 100;
+//   let timer = null;
+//   clearTimeout(timer);
+//   timer = setTimeout(() => {
+//     document.location.reload();
+//   }, delay);
+// }
 
 // GNG
 const headerLayout = document.querySelector(".header-layout");
