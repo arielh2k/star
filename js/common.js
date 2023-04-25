@@ -18,7 +18,14 @@ if (isMobile) {
     });
   });
 }
-
+function resizeDelay() {
+  let delay = 100;
+  let timer = null;
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    document.location.reload();
+  }, delay);
+}
 // var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
 //   ? true
 //   : false;
@@ -61,14 +68,6 @@ if (isMobile) {
 //       landscapeDim();
 //     }
 //   }
-// function resizeDelay() {
-//   let delay = 100;
-//   let timer = null;
-//   clearTimeout(timer);
-//   timer = setTimeout(() => {
-//     document.location.reload();
-//   }, delay);
-// }
 
 // GNG
 const headerLayout = document.querySelector(".header-layout");
