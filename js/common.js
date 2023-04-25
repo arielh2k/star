@@ -8,11 +8,13 @@ if (isMobile) {
   window.addEventListener("orientationchange", () => {
     if (window.matchMedia("(orientation: landscape)").matches) {
       resizeDelay();
+      orDim.classList.add("is-show");
       formControl.forEach((inp) => {
         inp.blur();
       });
     } else if (window.matchMedia("(orientation: portrait)").matches) {
       resizeDelay();
+      orDim.classList.remove("is-show");
       window.scrollTo(0, 0);
       window.document.body.scrollTop = 0;
     }

@@ -6328,7 +6328,7 @@ html.popup {
 .orientation-dim {
   display: none;
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
   .orientation-dim {
     display: none;
   }
@@ -6358,7 +6358,7 @@ html.popup {
   .orientation-dim {
     display: none;
   }
-}
+} */
 
 /* popup 휴면 계정 해제 */
 .dm-date {
