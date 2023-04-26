@@ -11,9 +11,9 @@ if (ios) {
         inp.blur();
       });
     } else if (window.matchMedia("(orientation: portrait)").matches) {
-      resizeDelay();
-      // window.scrollTo(0, 0);
-      // window.document.body.scrollTop = 0;
+      // resizeDelay();
+      window.scrollTo(0, 0);
+      window.document.body.scrollTop = 0;
     }
   });
 }
