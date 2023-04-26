@@ -41,6 +41,7 @@ body {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-text-size-adjust: none;
 }
 a {
   color: var(--color-dark);
