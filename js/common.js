@@ -125,3 +125,27 @@ function fullMenuClose() {
     fullMenu.removeChild(dim);
   }
 }
+
+// modal
+const modalSection = document.querySelector("body");
+const modals = document.querySelectorAll(".modal");
+const modalClose = document.querySelectorAll(".modal-close");
+if (modalSection) {
+  modalSection.addEventListener("click", (e) => {
+    const modalId = e.target.dataset.modal;
+    if (modalId) {
+      const modalLayer = document.getElementById(modalId);
+      modalLayer.classList.add("is-show");
+      modalSection.style.overflow = "hidden";
+    }
+  });
+
+  modalClose.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      modals.forEach((modal) => {
+        modal.classList.remove("is-show");
+        modalSection.removeAttribute("style");
+      });
+    });
+  });
+}
