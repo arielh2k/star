@@ -1,3 +1,4 @@
+/* 2023-04-20 */
 let bodyWidth = window.innerWidth;
 let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
@@ -5,16 +6,14 @@ const formControl = document.querySelectorAll("input");
 var ios = navigator.userAgent.match(/(iPod|iPhone)/);
 if (ios) {
   window.addEventListener("orientationchange", () => {
-    window.addEventListener("resize", () => {
-      if (window.matchMedia("(orientation: landscape)").matches) {
-        formControl.forEach((inp) => {
-          inp.blur();
-        });
-      } else if (window.matchMedia("(orientation: portrait)").matches) {
-        window.scrollTo(0, 0);
-        window.document.body.scrollTop = 0;
-      }
-    });
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      formControl.forEach((inp) => {
+        inp.blur();
+      });
+    } else if (window.matchMedia("(orientation: portrait)").matches) {
+      window.scrollTo(0, 0);
+      window.document.body.scrollTop = 0;
+    }
   });
 }
 
@@ -24,59 +23,13 @@ var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
 if (aos) {
   window.addEventListener("resize", () => {
     if (window.matchMedia("(orientation: landscape)").matches) {
+      orDim.style.display = "block";
       formControl.forEach((inp) => {
         inp.blur();
       });
     }
   });
 }
-
-function resizeDelay() {
-  let delay = 100;
-  let timer = null;
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    document.location.reload();
-  }, delay);
-}
-
-// if (isMobile) {
-//     if (orDim) {
-//       window.addEventListener("resize", () => {
-//         let newWidth = window.innerWidth;
-//         if (newWidth !== bodyWidth) {
-//           bodyWidth = newWidth;
-//           landscapeDim();
-//         }
-//         if (bodyWidth > 1000) {
-//           orDim.classList.remove("is-show");
-//         }
-//       });
-
-//       function landscapeDim() {
-//         if (window.matchMedia("(orientation: landscape)").matches) {
-//           orDim.classList.add("is-show");
-//           bodysec.style.overflow = "hidden";
-//           formControl.forEach((inp) => {
-//             inp.blur();
-//             console.log(inp);
-//           });
-//         } else if (window.matchMedia("(orientation: portrait)").matches) {
-//           orDim.classList.remove("is-show");
-//           bodysec.removeAttribute("style");
-//         }
-//       }
-//       landscapeDim();
-//     }
-//   }
-// function resizeDelay() {
-//   let delay = 100;
-//   let timer = null;
-//   clearTimeout(timer);
-//   timer = setTimeout(() => {
-//     document.location.reload();
-//   }, delay);
-// }
 
 // GNG
 const headerLayout = document.querySelector(".header-layout");

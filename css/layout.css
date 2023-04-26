@@ -6362,7 +6362,7 @@ html.popup {
   }
 }
 /* 2023-04-26 */
-@media (orientation: landscape) and (hover: none) {
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) {
   .orientation-dim {
     display: block;
   }
