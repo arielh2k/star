@@ -6359,9 +6359,9 @@ body[data-touchable="true"] .orientation-dim {
 body:not([data-touchable="true"]) .orientation-dim {
   display: none;
 }
-.orientation-dim {
+/* .orientation-dim {
   display: none;
-}
+} */
 .orientation-dim .inner {
   position: fixed;
   width: 100%;
