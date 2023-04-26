@@ -26,23 +26,11 @@ body {
     height: 100%;
     overflow-y: auto;
   }
-  /* 노치대응 */
-  /* iOS 11.0 버전 */
-  body {
-    padding: constant(safe-area-inset-top) constant(safe-area-inset-right)
-      constant(safe-area-inset-bottom) constant(safe-area-inset-left);
-  }
-  /* iOS 11.2 이상 */
-  body {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right)
-      env(safe-area-inset-bottom) env(safe-area-inset-left);
-  }
 }
 
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-text-size-adjust: none;
 }
 a {
   color: var(--color-dark);
