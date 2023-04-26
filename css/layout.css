@@ -6357,7 +6357,7 @@ body[data-touchable="true"] .orientation-dim {
   display: block;
 }
 body:not([data-touchable="true"]) .orientation-dim {
-  display: none;
+  display: block;
 }
 /* .orientation-dim {
   display: none;
