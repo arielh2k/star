@@ -2,7 +2,7 @@
 const orDim = document.body.querySelector(".orientation-dim");
 
 function checkTouchable() {
-  orDim.dataset.touchable = !!window.ontouchstart;
+  document.body.dataset.touchable = !!window.ontouchstart;
 }
 checkTouchable();
 
