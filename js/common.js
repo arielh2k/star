@@ -1,35 +1,42 @@
 /* 2023-04-20 */
-let bodyWidth = window.innerWidth;
-let orDim = document.querySelector(".orientation-dim");
-let bodysec = document.querySelector("body");
-const formControl = document.querySelectorAll("input");
-var ios = navigator.userAgent.match(/(iPod|iPhone)/);
-if (ios) {
-  window.addEventListener("orientationchange", () => {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      formControl.forEach((inp) => {
-        inp.blur();
-      });
-    } else if (window.matchMedia("(orientation: portrait)").matches) {
-      window.scrollTo(0, 0);
-      window.document.body.scrollTop = 0;
-    }
-  });
-}
+const orDim = document.body.querySelector(".orientation-dim");
 
-var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
-  ? true
-  : false;
-if (aos) {
-  window.addEventListener("resize", () => {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      orDim.style.display = "block";
-      formControl.forEach((inp) => {
-        inp.blur();
-      });
-    }
-  });
+function checkTouchable() {
+  orDim.dataset.touchable = !!window.ontouchstart;
 }
+checkTouchable();
+
+// let bodyWidth = window.innerWidth;
+// let orDim = document.querySelector(".orientation-dim");
+// let bodysec = document.querySelector("body");
+// const formControl = document.querySelectorAll("input");
+// var ios = navigator.userAgent.match(/(iPod|iPhone)/);
+// if (ios) {
+//   window.addEventListener("orientationchange", () => {
+//     if (window.matchMedia("(orientation: landscape)").matches) {
+//       formControl.forEach((inp) => {
+//         inp.blur();
+//       });
+//     } else if (window.matchMedia("(orientation: portrait)").matches) {
+//       window.scrollTo(0, 0);
+//       window.document.body.scrollTop = 0;
+//     }
+//   });
+// }
+
+// var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+//   ? true
+//   : false;
+// if (aos) {
+//   window.addEventListener("resize", () => {
+//     if (window.matchMedia("(orientation: landscape)").matches) {
+//       orDim.style.display = "block";
+//       formControl.forEach((inp) => {
+//         inp.blur();
+//       });
+//     }
+//   });
+// }
 
 // GNG
 const headerLayout = document.querySelector(".header-layout");
