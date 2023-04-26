@@ -22,7 +22,7 @@ if (ios) {
     }
   });
 }
-
+//
 var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
   ? true
   : false;
