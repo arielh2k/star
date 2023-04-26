@@ -6353,6 +6353,9 @@ html.popup {
   }
 }
 /* 2023-04-20 */
+body[data-touchable="false"] .orientation-dim {
+  display: none;
+}
 .orientation-dim {
   display: none;
 }
@@ -6362,7 +6365,7 @@ html.popup {
   }
 }
 /* 2023-04-26 */
-@media (any-hover: none) and (any-pointer: coarse) and (orientation: landscape) {
+@media (orientation: landscape) {
   .orientation-dim {
     display: block;
   }

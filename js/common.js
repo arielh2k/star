@@ -1,11 +1,9 @@
 /* 2023-04-20 */
 
-// const orDim = document.body.querySelector(".orientation-dim");
-
-// function checkTouchable() {
-//   document.body.dataset.touchable = !!window.ontouchstart;
-// }
-// checkTouchable();
+function checkTouchable() {
+  document.body.dataset.touchable = !!window.ontouchstart;
+}
+checkTouchable();
 
 let bodyWidth = window.innerWidth;
 let orDim = document.querySelector(".orientation-dim");
