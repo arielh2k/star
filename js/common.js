@@ -3,21 +3,24 @@ let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
 const formControl = document.querySelectorAll("input");
 
-var ios = navigator.userAgent.match(/(iPod|iPhone)/);
 if (ios) {
   window.addEventListener("orientationchange", () => {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      formControl.forEach((inp) => {
-        inp.blur();
-      });
-    } else if (window.matchMedia("(orientation: portrait)").matches) {
-      // resizeDelay();
-      window.scrollTo(0, 0);
-      window.document.body.scrollTop = 0;
-    }
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        formControl.forEach((inp) => {
+          inp.blur();
+        });
+      } else if (window.matchMedia("(orientation: portrait)").matches) {
+        window.scrollTo(0, 0);
+        window.document.body.scrollTop = 0;
+      }
+    });
   });
 }
-var aos = /Android|iPod|BlackBerry/i.test(navigator.userAgent);
+
+var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+  ? true
+  : false;
 if (aos) {
   window.addEventListener("resize", () => {
     if (window.matchMedia("(orientation: landscape)").matches) {
@@ -26,15 +29,6 @@ if (aos) {
       });
     }
   });
-}
-
-function resizeDelay() {
-  let delay = 100;
-  let timer = null;
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    document.location.reload();
-  }, delay);
 }
 
 // if (isMobile) {
