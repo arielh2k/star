@@ -6353,42 +6353,41 @@ html.popup {
   }
 }
 /* 2023-04-20 */
-body[data-touchable="true"] .orientation-dim {
-  display: block;
-}
-body[data-touchable="false"] .orientation-dim {
+.orientation-dim {
   display: none;
 }
-/* .orientation-dim {
-  display: none;
-} */
-.orientation-dim .inner {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-1st);
-  z-index: 9000;
-}
-.orientation-dim span {
-  font-size: 2.4rem;
-  color: var(--color-white);
-  line-height: 3.5rem;
-  text-align: center;
-}
-
 @media (orientation: portrait) {
-}
-/* 2023-04-26 */
-@media (orientation: landscape) {
-}
-/* @media all and (min-width: 1024px) {
   .orientation-dim {
     display: none;
   }
-} */
+}
+/* 2023-04-26 */
+@media (any-hover: none) and (any-pointer: coarse) and (orientation: landscape) {
+  .orientation-dim {
+    display: block;
+  }
+  .orientation-dim .inner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-1st);
+    z-index: 9000;
+  }
+  .orientation-dim span {
+    font-size: 2.4rem;
+    color: var(--color-white);
+    line-height: 3.5rem;
+    text-align: center;
+  }
+}
+@media all and (min-width: 1024px) {
+  .orientation-dim {
+    display: none;
+  }
+}
 /* popup 휴면 계정 해제 */
 .dm-date {
   margin-top: 4rem;
