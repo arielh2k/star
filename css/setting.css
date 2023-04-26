@@ -356,15 +356,18 @@ select {
     -moz-appearance: none;
     appearance: none;
 }
+/* 2023-04-24 */
 input[type="text"],
 input[type="number"],
 input[type="password"],
 input[type="date"],
 input[type="search"],
-input[type="tel"] {
+input[type="tel"],
+input[type="email"] {
     width: 100%;
     height: 4.8rem;
     padding-left: 1.2rem;
+    padding-right: 3rem;
     border: 1px var(--border-color) solid;
     border-radius: var(--radius-s);
     outline: 0;
@@ -372,6 +375,8 @@ input[type="tel"] {
     -moz-appearance: none;
     appearance: none;
 }
+/* 2023-04-26 이메일포커스 추가 */
+input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus,
@@ -559,6 +564,7 @@ table {
     align-items: center;
 }
 .checkbox-item label .icon-check {
+    display: block;
     width: 1.6rem;
     height: 1.6rem;
     border: 1px var(--checkbox-color) solid;
@@ -576,9 +582,17 @@ table {
 .checkbox-item label em.em {
     color: var(--color-1st);
 }
-.checkbox-item input[type="checkbox"]:checked + label .icon-check {
+/* PP11021025-5677 */
+.checkbox-item input[type="checkbox"]:checked ~ .t-label .icon-check {
+    width: 2rem;
+    height: 2rem;
     border: 1px var(--color-1st) solid;
-    background: var(--color-1st) url("../img/icon-check.svg") center center / 1rem 0.8rem no-repeat;
+    background-color: var(--color-1st);
+    background-image: url("../img/icon-checkbox.png");
+    background-repeat: no-repeat;
+    background-size: 1rem 0.8rem;
+    background-position: center center;
+    background-attachment: initial;
 }
 
 /* tab */
