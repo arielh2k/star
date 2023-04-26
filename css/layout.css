@@ -6356,7 +6356,7 @@ html.popup {
 body[data-touchable="true"] .orientation-dim {
   display: block;
 }
-body:not([data-touchable="true"]) .orientation-dim {
+body[data-touchable="false"] .orientation-dim {
   display: none;
 }
 /* .orientation-dim {
