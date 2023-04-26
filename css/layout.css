@@ -4693,7 +4693,8 @@ body::-webkit-scrollbar {
     background-size: 100%;
   }
   .page-swiper .icon-scroll {
-    bottom: calc(100% - var(--vh, 1vh) * 100);
+    /* bottom: calc(100% - var(--vh, 1vh) * 100); */
+    bottom: 0;
   }
 }
 .page-swiper .swiper-slide-active .ani-top {
