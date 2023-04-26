@@ -6353,6 +6353,12 @@ html.popup {
   }
 }
 /* 2023-04-20 */
+body[data-touchable="true"] .orientation-dim {
+  display: block;
+}
+body:not([data-touchable="true"]) .orientation-dim {
+  display: none;
+}
 .orientation-dim {
   display: none;
 }
@@ -6374,15 +6380,9 @@ html.popup {
 }
 
 @media (orientation: portrait) {
-  body:not([data-touchable="true"]) .orientation-dim {
-    display: none;
-  }
 }
 /* 2023-04-26 */
 @media (orientation: landscape) {
-  body[data-touchable="true"] .orientation-dim {
-    display: block;
-  }
 }
 /* @media all and (min-width: 1024px) {
   .orientation-dim {
