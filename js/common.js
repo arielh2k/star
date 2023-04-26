@@ -1,10 +1,10 @@
-/* 2023-04-20 */
-
+/* 2023-04-26 */
 function checkTouchable() {
   document.body.dataset.touchable = !!window.ontouchstart;
 }
 checkTouchable();
 
+/* 2023-04-20 */
 let bodyWidth = window.innerWidth;
 let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
@@ -33,6 +33,8 @@ if (aos) {
       formControl.forEach((inp) => {
         inp.blur();
       });
+    } else if (window.matchMedia("(orientation: portrait)").matches) {
+      orDim.style.display = "none";
     }
   });
 }

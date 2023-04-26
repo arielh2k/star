@@ -6352,10 +6352,11 @@ html.popup {
     height: 0.3rem;
   }
 }
-/* 2023-04-20 */
+/* 2023-04-26 */
 body[data-touchable="false"] .orientation-dim {
   display: none;
 }
+/* 2023-04-20 */
 .orientation-dim {
   display: none;
 }
