@@ -2,7 +2,7 @@ let bodyWidth = window.innerWidth;
 let orDim = document.querySelector(".orientation-dim");
 let bodysec = document.querySelector("body");
 const formControl = document.querySelectorAll("input");
-
+var ios = navigator.userAgent.match(/(iPod|iPhone)/);
 if (ios) {
   window.addEventListener("orientationchange", () => {
     window.addEventListener("resize", () => {
@@ -29,6 +29,15 @@ if (aos) {
       });
     }
   });
+}
+
+function resizeDelay() {
+  let delay = 100;
+  let timer = null;
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    document.location.reload();
+  }, delay);
 }
 
 // if (isMobile) {
