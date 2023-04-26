@@ -6362,7 +6362,7 @@ html.popup {
   }
 }
 /* 2023-04-26 */
-@media (orientation: landscape) {
+@media (orientation: landscape) and (hover: none) {
   .orientation-dim {
     display: block;
   }
@@ -6383,11 +6383,11 @@ html.popup {
     text-align: center;
   }
 }
-/* @media all and (min-width: 1024px) {
+@media all and (min-width: 1024px) {
   .orientation-dim {
     display: none;
   }
-} */
+}
 /* popup 휴면 계정 해제 */
 .dm-date {
   margin-top: 4rem;
