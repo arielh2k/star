@@ -28,13 +28,17 @@ var aos = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
   : false;
 if (aos) {
   window.addEventListener("resize", () => {
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      orDim.style.display = "block";
-      formControl.forEach((inp) => {
-        inp.blur();
-      });
-    } else if (window.matchMedia("(orientation: portrait)").matches) {
-      orDim.style.display = "none";
+    let newWidth = window.innerWidth;
+    if (newWidth !== bodyWidth) {
+      bodyWidth = newWidth;
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        orDim.style.display = "block";
+        formControl.forEach((inp) => {
+          inp.blur();
+        });
+      } else if (window.matchMedia("(orientation: portrait)").matches) {
+        orDim.style.display = "none";
+      }
     }
   });
 }
