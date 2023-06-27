@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/assets/css/reset.css" />
+    <link rel="stylesheet" href="../static/assets/css/setting.css" />
+    <link rel="stylesheet" href="../static/assets/css/layout.css" />
+    <script defer src="../static/assets/js/common.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- header -->
+      <div class="header-wrap">
+        <header id="header" class="header-layout">
+          <!-- index 에서 보여질 로고 -->
+          <!-- <h1 class="header-logo">
+                            <a href="#">인재개발 플랫폼 Butter Time</a>
+                        </h1> -->
+          <!-- sub page 에서 보여질 로고 및 아이콘 -->
+          <div class="sub-header">
+            <a href="#" class="btn-logo-home">홈으로 이동</a>
+            <h1 class="title">콘텐츠 제목</h1>
+          </div>
+
+          <div class="header-response">
+            <div class="header-inner">
+              <nav class="gnb-area">
+                <ul class="gnb-menu">
+                  <li class="gnb-item"><a href="#">버터타임 소개</a></li>
+                  <li class="gnb-item"><a href="#">수강신청</a></li>
+                  <li class="gnb-item dropdown">
+                    <a href="#">나의 강의실</a>
+                    <div class="gnb-submenu-wrap">
+                      <ul class="gnb-submenu">
+                        <li><a href="#">학습현황</a></li>
+                        <li><a href="#">결제현황</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="gnb-item dropdown">
+                    <a href="#">고객센터</a>
+                    <div class="gnb-submenu-wrap">
+                      <ul class="gnb-submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="http://www.naver.com">1:1메뉴</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              <div class="header-infomenu">
+                <a href="#" class="c-btn-i-menu info">정보수정</a>
+                <a href="#" class="c-btn-i-menu logout">로그아웃</a>
+              </div>
+              <div class="header-sidemenu">
+                <a href="#" class="s-menu">이용약관</a>
+                <a href="#" class="s-menu"
+                  ><strong>개인정보 처리 방침</strong></a
+                >
+              </div>
+              <button class="btn-drawer-close">닫기</button>
+            </div>
+          </div>
+          <!-- only mobile  -->
+          <button class="btn-drawer-open">전체메뉴</button>
+        </header>
+      </div>
+      <!--//. header -->
+      <!-- section content -->
+      <div class="section-content full">
+        <div class="section-subnav-area">
+          <nav class="subnav-wrap">
+            <ul class="subnav-item-list">
+              <li class="subnav-item">
+                <a href="#" class="menu-item">학습현황</a>
+              </li>
+              <li class="subnav-item">
+                <a href="#" class="menu-item active">결제현황</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="section-middlearea edu-section">
+          <!-- 기간조회 -->
+          <div class="info-box-shadow pay-search-box">
+            <div class="check-btn-group">
+              <button class="c-btn-check active">1개월</button>
+              <button class="c-btn-check">2개월</button>
+              <button class="c-btn-check">3개월</button>
+              <button class="c-btn-check mo-btn">직접입력</button>
+            </div>
+            <div class="search-fieldset">
+              <!-- datepicker 라이브러리 선택 필요, rework 필요 -->
+              <div class="inp-wrap">
+                <div class="inp-date">
+                  <input
+                    type="date"
+                    class="t-inp t-date"
+                    name=""
+                    id=""
+                    title="시작일 입력"
+                  />
+                  <span class="txt">~</span>
+                  <input
+                    type="date"
+                    class="t-inp t-date"
+                    name=""
+                    id=""
+                    title="종료일 입력"
+                  />
+                </div>
+              </div>
+              <button class="c-btn-primary-s">조회</button>
+            </div>
+          </div>
+          <!--//. 기간조회 -->
+
+          <!-- 결제현황 목록 -->
+          <div class="contents-group">
+            <div class="board-wrap payment-list">
+              <div class="bbs-header">
+                <div class="cell-p-date">수강신청일</div>
+                <div class="cell-p-order">주문번호</div>
+                <div class="cell-p-title">학습정보</div>
+                <div class="cell-p-price">
+                  결제금액
+                  <span class="rf-txt">(환불금액)</span>
+                </div>
+                <div class="cell-p-status">상태</div>
+                <div class="cell-p-btn">결제확인 / 취소신청</div>
+              </div>
+              <ul class="bbs-list">
+                <li class="list-item">
+                  <div class="item-head">
+                    <div class="cell-p-date">2023-03-29</div>
+                    <div class="cell-p-order">
+                      <span class="is-mobile">주문번호</span>
+                      <a href="" class="c-btn-underline-s">B000003</a>
+                    </div>
+                    <div class="cell-p-title al-left">
+                      <span class="desc-txt">[북클래스 구독]</span>
+                      <a href="#" class="link-tit"
+                        >베스트셀러 영어교재로 배우는 영어회화 [6개월]</a
+                      >
+                    </div>
+                    <div class="cell-p-price">53,000원</div>
+                    <div class="cell-p-status">
+                      <span class="b-status type-1">결제완료</span>
+                    </div>
+                    <div class="cell-p-btn">
+                      <button class="c-btn-print">
+                        영수증 출력 <span class="is-mobile">(PC에서 확인)</span>
+                      </button>
+                      <button class="c-btn-cancel" data-modal="popOrderCancel">
+                        취소신청
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <div class="item-head">
+                    <div class="cell-p-date">2023-03-29</div>
+                    <div class="cell-p-order">
+                      <span class="is-mobile">주문번호</span>
+                      <a href="" class="c-btn-underline-s">B000003</a>
+                    </div>
+                    <div class="cell-p-title al-left">
+                      <span class="desc-txt">[북클래스 구독]</span>
+                      <a href="#" class="link-tit"
+                        >베스트셀러 영어교재로 배우는 영어회화 [6개월]</a
+                      >
+                    </div>
+                    <div class="cell-p-price">53,000원</div>
+                    <div class="cell-p-status">
+                      <span class="b-status type-1">결제완료</span>
+                    </div>
+                    <div class="cell-p-btn">
+                      <!-- 모바일일때 disabled -->
+                      <!-- class로 disabled 추가해도 됨 -->
+                      <button class="c-btn-print" disabled>
+                        영수증 출력<span class="is-mobile">(PC에서 확인)</span>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <div class="item-head">
+                    <div class="cell-p-date">2023-03-29</div>
+                    <div class="cell-p-order">
+                      <span class="is-mobile">주문번호</span>
+                      <a href="" class="c-btn-underline-s">B000003</a>
+                    </div>
+                    <div class="cell-p-title al-left">
+                      <span class="desc-txt">[북클래스 구독]</span>
+                      <a href="#" class="link-tit"
+                        >베스트셀러 영어교재로 배우는 영어회화 [6개월]</a
+                      >
+                    </div>
+                    <div class="cell-p-price">
+                      53,000원 <span class="rf-txt">(53,000원)</span>
+                    </div>
+                    <div class="cell-p-status">
+                      <span class="b-status type-3">수강신청 완료</span>
+                    </div>
+                    <div class="cell-p-btn">
+                      <button class="c-btn-print">
+                        영수증 출력<span class="is-mobile">(PC에서 확인)</span>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <div class="item-head">
+                    <div class="cell-p-date">2023-03-29</div>
+                    <div class="cell-p-order">
+                      <span class="is-mobile">주문번호</span>
+                      <a href="" class="c-btn-underline-s">B000003</a>
+                    </div>
+                    <div class="cell-p-title al-left">
+                      <span class="desc-txt">[북클래스 구독]</span>
+                      <a href="#" class="link-tit"
+                        >베스트셀러 영어교재로 배우는 영어회화 [6개월]</a
+                      >
+                    </div>
+                    <div class="cell-p-price">53,000원</div>
+                    <div class="cell-p-status">
+                      <span class="b-status type-1">결제완료</span>
+                    </div>
+                    <div class="cell-p-btn">
+                      <button class="c-btn-print">
+                        영수증 출력<span class="is-mobile">(PC에서 확인)</span>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="item-info-msg">
+                <p class="i-thumb">
+                  <img
+                    src="../static/assets/img/complate-payment-img.png"
+                    alt=""
+                  />
+                </p>
+                <p class="i-msg">수강신청 결제 이력이 없습니다.</p>
+              </div>
+            </div>
+            <div class="pagination-wrap">
+              <!-- 비활성일때 disabled class 추가 -->
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <button class="page-btn prev">이전페이지</button>
+                </li>
+                <li class="page-item active">
+                  <button type="button" title="현재페이지" class="page-link">
+                    1
+                  </button>
+                </li>
+                <li class="page-item">
+                  <button type="button" class="page-link">2</button>
+                </li>
+                <li class="page-item">
+                  <button type="button" class="page-link">3</button>
+                </li>
+                <!--  <li class="page-item"><button type="button" class="page-link">4</button></li>
+                                <li class="page-item"><button type="button" class="page-link">5</button></li>
+                                <li class="page-item"><button type="button" class="page-link">6</button></li> -->
+                <li class="page-item"><span class="page-link">...</span></li>
+                <li class="page-item">
+                  <button type="button" class="page-link">214</button>
+                </li>
+                <li class="page-item">
+                  <button class="page-btn">다음페이지</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--//. 결제현황 목록 -->
+          <div class="contents-group">
+            <div class="contents-title">
+              <h2 class="h4 cs-info-title">수강안내</h2>
+            </div>
+            <div class="info-box-desc cs-info-box-desc">
+              <ul class="list-type-hyphen">
+                <li>학습은 $yyyy년 m월 d일$부터 시작됩니다.</li>
+                <li>
+                  수강신청 완료 안내 메시지를 참고하여 버터타임 앱에 로그인 후
+                  이용해주세요.
+                </li>
+                <li>
+                  수강 취소는 수강신청 후 7일 이내 수강이력이 없는 경우에만
+                  가능합니다.
+                </li>
+                <li>
+                  기타 문의는 <strong>aitutor@lgcns.com</strong>으로
+                  부탁드립니다.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. section content -->
+      <!-- footer -->
+      <div class="footer-wrap">
+        <footer class="footer-layout">
+          <div class="footer-head">
+            <div class="footer-inner">
+              <div class="f-logo">(주)엘지씨엔에스</div>
+              <ul class="f-side-menu">
+                <li><a href="" class="link-side">이용약관</a></li>
+                <li>
+                  <a href="" class="link-side"
+                    ><strong> 개인정보 처리 방침</strong></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-info">
+            <div class="footer-inner">
+              <dl class="f-com-info">
+                <dt>대표이사</dt>
+                <dd>김영섭</dd>
+                <dt>사업자등록번호</dt>
+                <dd>116-81-19477</dd>
+                <dt>개인정보 보호 책임자</dt>
+                <dd>이정무</dd>
+                <dt>사업자 주소</dt>
+                <dd>서울특별시 강서구 마곡중앙8로 71(마곡동)</dd>
+              </dl>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!--//. footer  -->
+      <!-- 주문취소 popup -->
+      <div id="popOrderCancel" class="modal modal-popup">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">주문취소</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="odc-wrap">
+                <div class="pop-contents-group">
+                  <div class="pop-content-title indent">
+                    <h3 class="title">학습정보</h3>
+                    <span class="odc-num">주문번호 <em>B000001</em></span>
+                  </div>
+                  <div class="odc-user-info">
+                    <ul class="option-list lh-mg edu-option-list">
+                      <li class="option-item">
+                        <span class="label">신청일자</span>
+                        <span class="cont">2022-02-20</span>
+                      </li>
+                      <li class="option-item">
+                        <span class="label">학습정보</span>
+                        <span class="cont"
+                          >[버터타임 북클래스] 베스트셀러 영어교재로 배우는
+                          영어회화 [1개월]
+                        </span>
+                      </li>
+                      <li class="option-item">
+                        <span class="label">이용기간</span>
+                        <span class="cont"
+                          >1개월, 2022-02-21(월) ~ 2022-02-21(월)</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="pop-contents-group">
+                  <div class="pop-content-title indent">
+                    <h3 class="title">취소 사유 선택 <i class="is-es"></i></h3>
+                  </div>
+                  <div class="pop-inner-wrap">
+                    <div class="check-button-group">
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-1" />
+                        <label for="order-1" class="b-label"
+                          >다른 학습 상품으로 재주문</label
+                        >
+                      </span>
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-2" />
+                        <label for="order-2"
+                          >커리큘럼 및 학습 콘텐츠 부족</label
+                        >
+                      </span>
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-3" />
+                        <label for="order-3">학습 시간 부족</label>
+                      </span>
+                      <span class="check-button">
+                        <input
+                          type="checkbox"
+                          name="order-el"
+                          id="order-4"
+                          checked
+                        />
+                        <label for="order-4">비싼 수강료</label>
+                      </span>
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-5" />
+                        <label for="order-5">결제 수단 변경</label>
+                      </span>
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-6" />
+                        <label for="order-6">앱 사용의 어려움</label>
+                      </span>
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-7" />
+                        <label for="order-7">잦은 음성 인식 오류 </label>
+                      </span>
+                      <span class="check-button">
+                        <input type="checkbox" name="order-el" id="order-8" />
+                        <label for="order-8">기타</label>
+                      </span>
+                    </div>
+                    <textarea
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="5"
+                      placeholder="기타 사유를 입력해주세요."
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="pop-contents-group">
+                  <div class="pop-content-title indent">
+                    <h3 class="title">환불 정보</h3>
+                  </div>
+                  <div class="pop-inner-wrap">
+                    <div class="line-box-group">
+                      <div class="odc-total">
+                        <div class="t-field">
+                          <span class="label"> 총 결제금액</span>
+                          <span class="price"> 112,000원</span>
+                        </div>
+                        <div class="t-field em">
+                          <span class="label">최종 환불 금액</span>
+                          <span class="price">53,000원</span>
+                        </div>
+                      </div>
+                      <ul class="option-list user-option">
+                        <li class="option-item">
+                          <div class="label">결제수단</div>
+                          <div class="cont">ㅇㅇ카드(1234)</div>
+                        </li>
+                        <li class="option-item">
+                          <div class="label">취소상품 금액</div>
+                          <div class="cont">9,900원</div>
+                        </li>
+                        <li class="option-item">
+                          <div class="label">할인취소 금액</div>
+                          <div class="cont">-8,900원</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="pop-contents-group">
+                  <div class="pop-content-title indent">
+                    <h3 class="cs-info-title pop">주문취소 안내</h3>
+                  </div>
+                  <div class="info-box-desc cs-info-box-desc">
+                    <ul class="list-type-hyphen">
+                      <li>
+                        환불 규정은 서비스 이용약관 제 00조를 참고해주세요.
+                      </li>
+                      <li>
+                        카드 승인 취소 후 환불 금액은 결제수단으로 자동
+                        입금됩니다.
+                      </li>
+                      <li>
+                        주문취소 후 환불 완료까지 결제수단에 따라 영업일 기준
+                        최대 7일이 소요됩니다.
+                      </li>
+                      <li>
+                        결제 수단에 따라 결제 취소 및 환불 처리 기간이 다르므로
+                        별도 안내를 확인해주세요.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group fixed-btn">
+                <button class="c-btn-secondary footer-btn lg modal-close">
+                  닫기
+                </button>
+                <a class="c-btn-primary footer-btn lg">주문취소</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="popOrderCancelComplate" class="modal modal-popup">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">주문취소</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="odc-wrap">
+                <div class="odc-complate-area">
+                  <div class="cp-thumb">
+                    <p class="thumb">
+                      <img
+                        src="../static/assets/img/coupon-thumb-01.png"
+                        alt="버터타임 6개월 이용권"
+                      />
+                      <!-- <img src="../static/assets/img/coupon-thumb-02.png" alt="버터타임 3개월 이용권" />
+                                            <img src="../static/assets/img/coupon-thumb-03.png" alt="버터타임 1개월 이용권" /> -->
+                    </p>
+                    <i class="icon"
+                      ><img src="../static/assets/img/img-cp-bullet.png" alt=""
+                    /></i>
+                  </div>
+                  <div class="cp-message">
+                    <p class="title">주문취소 완료</p>
+                    <p class="txt">
+                      주문번호<strong>[B000001]</strong>의 취소처리가 완료
+                      되었습니다.
+                    </p>
+                    <p class="desc">
+                      더욱 좋은 교육 상품으로 다시 만나 뵙길<br />
+                      기다리겠습니다. 감사합니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="pop-contents-group">
+                  <div class="pop-content-title indent">
+                    <h3 class="cs-info-title pop">주문취소 안내</h3>
+                  </div>
+                  <div class="info-box-desc cs-info-box-desc">
+                    <ul class="list-type-hyphen">
+                      <li>
+                        결제 수단에 따라 결제 취소 및 환불 처리 기간이 다르므로
+                        별도 안내를 확인해주세요.
+                      </li>
+                      <li>취소 및 환불이 완료된 건은 복구가 어렵습니다.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group fixed-btn">
+                <button class="c-btn-primary footer-btn lg modal-close">
+                  닫기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const checkBtnGroup = document.querySelector(".check-btn-group");
+        const dateWrap = document.querySelector(".inp-wrap");
+        checkBtnGroup.addEventListener("click", (e) => {
+          const target = e.target.classList;
+          const btns = document.querySelectorAll(
+            ".check-btn-group .c-btn-check"
+          );
+          btns.forEach((btn) => {
+            btn.classList.remove("active");
+            dateWrap.classList.remove("is-show");
+          });
+          target.add("active");
+          if (target.contains("mo-btn")) {
+            dateWrap.classList.add("is-show");
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

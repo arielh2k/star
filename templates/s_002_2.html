@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="viewport-fit=cover, width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 "
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../static/assets/css/reset.css" />
+        <link rel="stylesheet" href="../static/assets/css/setting.css" />
+        <link rel="stylesheet" href="../static/assets/css/layout.css" />
+        <script defer src="../static/assets/js/common.js"></script>
+    </head>
+    <body>
+        <!-- 가로모드 레이어 -->
+        <div class="orientation-dim">
+            <div class="inner">
+                <span>버터타임은<br /><strong>모바일 가로모드 화면</strong>을<br />지원하지 않습니다</span>;
+            </div>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div class="header-wrap">
+                <header id="header" class="header-layout">
+                    <!-- index 에서 보여질 로고 -->
+                    <!-- <h1 class="header-logo">
+                            <a href="#">인재개발 플랫폼 Butter Time</a>
+                        </h1> -->
+                    <!-- sub page 에서 보여질 로고 및 아이콘 -->
+                    <div class="sub-header">
+                        <a href="#" class="btn-logo-home">홈으로 이동</a>
+                        <h1 class="title">비밀번호 찾기</h1>
+                    </div>
+
+                    <div class="header-response">
+                        <div class="header-inner">
+                            <nav class="gnb-area">
+                                <ul class="gnb-menu">
+                                    <li class="gnb-item">
+                                        <a href="#" class="active">버터타임 소개</a>
+                                    </li>
+                                    <li class="gnb-item"><a href="#">수강신청</a></li>
+                                    <li class="gnb-item dropdown">
+                                        <a href="#">나의 강의실</a>
+                                        <div class="gnb-submenu-wrap">
+                                            <ul class="gnb-submenu">
+                                                <li><a href="#">학습현황</a></li>
+                                                <li><a href="#">결제현황</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb-item dropdown">
+                                        <a href="#">고객센터</a>
+                                        <div class="gnb-submenu-wrap">
+                                            <ul class="gnb-submenu">
+                                                <li><a href="#">공지사항</a></li>
+                                                <li><a href="http://www.naver.com">1:1메뉴</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="header-infomenu">
+                                <a href="#" class="c-btn-i-menu info">정보수정</a>
+                                <a href="#" class="c-btn-i-menu logout">로그아웃</a>
+                            </div>
+                            <div class="header-sidemenu">
+                                <a href="#" class="s-menu">이용약관</a>
+                                <a href="#" class="s-menu"><strong>개인정보 처리 방침</strong></a>
+                            </div>
+                            <button class="btn-drawer-close">닫기</button>
+                        </div>
+                    </div>
+                    <!-- only mobile  -->
+                    <button class="btn-drawer-open">전체메뉴</button>
+                </header>
+            </div>
+            <!--//. header -->
+
+            <!-- section content -->
+            <div class="section-content">
+                <!-- section middlearea area -->
+                <div class="section-middlearea">
+                    <div class="member-wrap">
+                        <div class="member-title">
+                            <p class="c-title">
+                                새로운 비밀번호를<br class="is-mobile" />
+                                입력해주세요.
+                            </p>
+                            <p class="c-desc">
+                                영문, 숫자, 특수문자를 포함하여<br class="is-mobile" />
+                                8자 이상 16자 이하로 입력해주세요.
+                            </p>
+                        </div>
+                        <div class="member-row">
+                            <div class="inp-fieldset">
+                                <div class="inp-form">
+                                    <input type="text" id="" class="t-inp" placeholder="아이디(이메일)" />
+                                    <button class="btn-input-clear">입력텍스트 삭제</button>
+                                    <i class="i-input-check is-hide">입력값 체크됨</i>
+                                </div>
+                                <p class="txt-msg error">공백 제외, 영문+숫자+특수문자 8~16자로 입력</p>
+                            </div>
+                            <div class="inp-fieldset">
+                                <div class="inp-form">
+                                    <input type="text" id="" class="t-inp" placeholder="아이디(이메일)" />
+                                    <button class="btn-input-clear is-hide">입력텍스트 삭제</button>
+                                    <i class="i-input-check">입력값 체크됨</i>
+                                </div>
+
+                                <p class="txt-msg error">입력하신 비밀번호와 일지하지 않습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="btn-group fixed-btn">
+                            <!-- 버튼 비활성 disabled 클래스 사용 -->
+                            <!-- <button class="c-btn-primary-l disabled">비밀번호 변경 완료</button> -->
+                            <button class="c-btn-primary-l" data-modal="popPWChange">비밀번호 변경 완료</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--//. section middlearea area -->
+            </div>
+            <!--//. section content -->
+            <!-- footer -->
+            <div class="footer-wrap">
+                <footer class="footer-layout">
+                    <div class="footer-head">
+                        <div class="footer-inner">
+                            <div class="f-logo">(주)엘지씨엔에스</div>
+                            <ul class="f-side-menu">
+                                <li><a href="" class="link-side">이용약관</a></li>
+                                <li>
+                                    <a href="" class="link-side"><strong> 개인정보 처리 방침</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-info">
+                        <div class="footer-inner">
+                            <dl class="f-com-info">
+                                <dt>대표이사</dt>
+                                <dd>김영섭</dd>
+                                <dt>사업자등록번호</dt>
+                                <dd>116-81-19477</dd>
+                                <dt>개인정보 보호 책임자</dt>
+                                <dd>이정무</dd>
+                                <dt>사업자 주소</dt>
+                                <dd>서울특별시 강서구 마곡중앙8로 71(마곡동)</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!--//. footer  -->
+
+            <!-- 비밀번호 변경 완료 -->
+            <div id="popPWChange" class="modal modal-alert">
+                <div class="modal-dim">
+                    <div class="modal-container">
+                        <div class="modal-body">
+                            <div class="alert-container">
+                                <p class="alert-thumb">
+                                    <img src="../static/assets/img/complate-pw-change-img.png" alt="" />
+                                </p>
+                                <p class="main-txt jua">비밀번호 변경 완료</p>
+                                <p class="desc-txt">
+                                    비밀번호가 변경 되었습니다.<br />
+                                    확인을 누르시면 로그인 페이지로 이동합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="modal-btn-group">
+                                <button class="c-btn-primary footer-btn modal-close">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//. 비밀번호 변경 완료 -->
+
+            <!-- 비밀번호 오류 -->
+            <div id="popPWChange" class="modal modal-alert is-show">
+                <div class="modal-dim">
+                    <div class="modal-container">
+                        <div class="modal-body">
+                            <div class="alert-container">
+                                <p class="alert-thumb">
+                                    <img src="../static/assets/img/complate-pw-error-img.png" alt="" />
+                                </p>
+                                <p class="main-txt"><strong>비밀번호 오류</strong></p>
+                                <p class="desc-txt">기존과 같은 비밀번호는 사용할 수 없습니다.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="modal-btn-group">
+                                <button class="c-btn-primary footer-btn modal-close">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//. 비밀번호 오류 -->
+        </div>
+    </body>
+</html>

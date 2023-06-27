@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/assets/css/reset.css" />
+    <link rel="stylesheet" href="../static/assets/css/setting.css" />
+    <link rel="stylesheet" href="../static/assets/css/layout.css" />
+    <script src="../static/assets/js/swiper-bundle.min.js"></script>
+    <script defer src="../static/assets/js/common.js"></script>
+  </head>
+  <body>
+    <!-- 가로모드 레이어 -->
+    <div class="orientation-dim">
+      <div class="inner">
+        <span
+          >버터타임은<br /><strong>모바일 가로모드 화면</strong>을<br />지원하지
+          않습니다</span
+        >;
+      </div>
+    </div>
+    <div id="wrap">
+      <!-- header -->
+      <div class="header-wrap is-mobile">
+        <header id="header" class="header-layout">
+          <!-- index 에서 보여질 로고 -->
+          <!-- <h1 class="header-logo">
+                            <a href="#">인재개발 플랫폼 Butter Time</a>
+                        </h1> -->
+          <!-- sub page 에서 보여질 로고 및 아이콘 -->
+          <div class="sub-header">
+            <a href="http://www.naver.com" target="_blank" class="btn-logo-home"
+              >홈으로 이동</a
+            >
+            <h1 class="title">로그인</h1>
+          </div>
+
+          <div class="header-response">
+            <div class="header-inner">
+              <nav class="gnb-area">
+                <ul class="gnb-menu">
+                  <li class="gnb-item"><a href="#">버터타임 소개</a></li>
+                  <li class="gnb-item"><a href="#">수강신청</a></li>
+                  <li class="gnb-item dropdown">
+                    <a href="#">나의 강의실</a>
+                    <div class="gnb-submenu-wrap">
+                      <ul class="gnb-submenu">
+                        <li><a href="#">학습현황</a></li>
+                        <li><a href="#">결제현황</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="gnb-item dropdown">
+                    <a href="#">고객센터</a>
+                    <div class="gnb-submenu-wrap">
+                      <ul class="gnb-submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="http://www.naver.com">1:1메뉴</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              <div class="header-infomenu">
+                <a href="#" class="c-btn-i-menu info">정보수정</a>
+                <a href="#" class="c-btn-i-menu logout">로그아웃</a>
+              </div>
+              <div class="header-sidemenu">
+                <a href="#" class="s-menu">이용약관</a>
+                <a href="#" class="s-menu"
+                  ><strong>개인정보 처리 방침</strong></a
+                >
+              </div>
+              <button class="btn-drawer-close">닫기</button>
+            </div>
+          </div>
+          <!-- only mobile  -->
+          <button class="btn-drawer-open">전체메뉴</button>
+        </header>
+      </div>
+      <!--//. header -->
+      <!-- 로그인  -->
+      <div class="login-container">
+        <div class="login-area">
+          <div class="login-header">
+            <p class="logo">buttertime</p>
+            <p class="txt">
+              <span class="color-1st"
+                >영어가 일상에 녹아들 시간<br />
+                버터타임</span
+              >에 오신것을 환영합니다.
+            </p>
+          </div>
+          <div class="login-inner">
+            <div class="login-form">
+              <p class="form-title">버터타임 로그인</p>
+              <div class="form-item">
+                <label for="">아이디</label>
+                <input
+                  type="text"
+                  class="inp-unset"
+                  placeholder="이메일 주소를 입력하세요."
+                />
+                <button class="btn-input-clear is-hide">입력텍스트 삭제</button>
+              </div>
+              <div class="form-item">
+                <label for="">비밀번호</label>
+                <input
+                  type="password"
+                  class="inp-unset"
+                  placeholder="비밀번호를 입력하세요."
+                />
+                <button class="btn-input-clear is-hide">입력텍스트 삭제</button>
+              </div>
+              <p class="inp-message">오류메시지 필드</p>
+            </div>
+            <div class="btn-group">
+              <a href="#" class="c-btn-primary btn-login">로그인</a>
+            </div>
+            <div class="aside-btn">
+              <a href="#" class="a-btn em">이메일 회원 가입</a
+              ><a href="#" class="a-btn">비밀번호 찾기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 로그인 -->
+
+      <!-- 휴면 해제 안내 -->
+      <div id="popLogoutAlert" class="modal modal-popup">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">휴면 계정 해제</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="popup-container">
+                <div class="text-center">
+                  <p class="alert-thumb">
+                    <img
+                      src="../../static/assets/img/complate-dm-img.png"
+                      alt=""
+                    />
+                  </p>
+                  <p class="main-txt">휴면 해제 안내</p>
+                  <p class="desc-txt">
+                    회원님의 계정은 장기간 미접속으로<br />
+                    <strong>휴면 상태로 전환</strong>되었습니다.<br />
+                    <strong>
+                      휴면 해제 동의 버튼을 눌러 계정을<br />
+                      활성화
+                    </strong>
+                    할 수 있습니다.
+                  </p>
+                </div>
+                <div class="dm-date">
+                  <p>최초 가입일 : YYYY.MM.DD</p>
+                  <p>휴면 전환일 : YYYY.MM.DD</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group fixed-btn">
+                <button class="c-btn-secondary footer-btn modal-close">
+                  취소
+                </button>
+                <button class="c-btn-primary footer-btn">휴면 해제 동의</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 휴면 해제 안내 -->
+
+      <!-- 비밀번호 변경 안내 -->
+      <div id="popLogoutAlert" class="modal modal-popup">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">주기적 비밀번호 변경</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="popup-container">
+                <div class="text-center">
+                  <p class="alert-thumb">
+                    <img
+                      src="../../static/assets/img/complate-pw-img.png"
+                      alt=""
+                    />
+                  </p>
+                  <p class="main-txt">비밀번호 변경 안내</p>
+                  <p class="desc-txt">
+                    <strong>
+                      회원님은 장기간<br />
+                      동일한 비밀번호를 사용중
+                    </strong>
+                    입니다.<br />
+                    소중한 개인정보 보호를 위해<br />
+                    비밀번호를 주기적으로 변경해주세요.
+                  </p>
+                </div>
+                <div class="pop-form">
+                  <div class="form-box">
+                    <label class="t-label" for="u-pw1"
+                      >현재 비밀번호<i class="is-es"></i
+                    ></label>
+                    <div class="inp-fieldset">
+                      <div class="inp-form">
+                        <input
+                          type="text"
+                          id="u-pw1"
+                          class="t-inp"
+                          placeholder="사용중인 비밀번호 입력"
+                        />
+                        <button class="btn-input-clear is-hide">
+                          입력텍스트 삭제
+                        </button>
+                        <i class="i-input-check"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <label class="t-label" for="u-pw2"
+                      >새로운 비밀번호<i class="is-es"></i
+                    ></label>
+                    <div class="inp-fieldset">
+                      <div class="inp-form">
+                        <input
+                          type="text"
+                          id="u-pw2"
+                          class="t-inp"
+                          placeholder="새로 설정할 비밀번호 입력"
+                        />
+                        <button class="btn-input-clear is-hide">
+                          입력텍스트 삭제
+                        </button>
+                        <i class="i-input-check"></i>
+                      </div>
+                    </div>
+                    <div class="inp-fieldset">
+                      <div class="inp-form">
+                        <input
+                          type="text"
+                          id="u-pw3"
+                          class="t-inp"
+                          placeholder="새로 설정할 비밀번호 입력"
+                        />
+                        <button class="btn-input-clear is-hide">
+                          입력텍스트 삭제
+                        </button>
+                        <i class="i-input-check"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group fixed-btn">
+                <button class="c-btn-secondary footer-btn modal-close">
+                  다음에 변경
+                </button>
+                <button class="c-btn-primary footer-btn">비밀번호 변경</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 비밀번호 변경 안내 -->
+
+      <!-- 휴면 계정 해제 -->
+      <div id="popLogoutAlert" class="modal modal-popup">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">휴면 계정 해제</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="popup-container">
+                <div class="text-center">
+                  <p class="alert-thumb">
+                    <img
+                      src="../../static/assets/img/complate-acc-img.png"
+                      alt=""
+                    />
+                  </p>
+                  <p class="main-txt">
+                    휴면 상태가<br />
+                    해제되었습니다.
+                  </p>
+                  <p class="desc-txt">
+                    다시 버터타임을<br />
+                    찾아주셔서 감사해요!<br />
+                    이제 로그인 후
+                    <strong> 모든 서비스를<br />정상적으로 이용</strong>할 수
+                    있습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group fixed-btn">
+                <a href="#" class="c-btn-primary footer-btn">로그인하기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 로그아웃 안내 -->
+
+      <!-- 로그아웃 안내 -->
+      <div id="popLogoutAlert" class="modal modal-alert">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">로그아웃 안내</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="alert-container">
+                <p class="alert-thumb">
+                  <img
+                    src="../../static/assets/img/icon-info-logout.png"
+                    alt=""
+                  />
+                </p>
+                <p class="main-txt"><strong> 로그아웃 안내</strong></p>
+                <p class="desc-txt">
+                  30분 동안 이용 내역이 없어<br />
+                  자동 로그아웃 되었습니다.
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group">
+                <button class="c-btn-primary footer-btn modal-close">
+                  완료
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 로그아웃 안내 -->
+    </div>
+  </body>
+</html>

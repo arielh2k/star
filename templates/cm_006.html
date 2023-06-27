@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/assets/css/reset.css" />
+    <link rel="stylesheet" href="../static/assets/css/setting.css" />
+    <link rel="stylesheet" href="../static/assets/css/layout.css" />
+    <script defer src="../static/assets/js/common.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <button class="c-btn-primary-m" data-modal="popUseInfo1">
+        이용안내 로그아웃상태
+      </button>
+      <button class="c-btn-primary-m" data-modal="popUseInfo2">
+        이용안내 유효시간초과
+      </button>
+
+      <!-- 이용안내 로그아웃 상태 -->
+      <div id="popUseInfo1" class="modal modal-alert">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">이용안내</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="alert-container">
+                <p class="main-txt">
+                  인재개발플랫폼
+                  <strong><br class="is-mobile" />로그아웃 상태</strong>입니다.
+                </p>
+                <p class="desc-txt">
+                  버터타임 수강신청을 위해<br />
+                  인재개발플랫폼에서 로그인해주세요.
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group">
+                <button class="c-btn-secondary footer-btn modal-close">
+                  취소
+                </button>
+                <button class="c-btn-primary footer-btn">로그인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 이용안내 로그아웃 상태  -->
+
+      <!-- 이용안내 유효시간초과 -->
+      <div id="popUseInfo2" class="modal modal-alert">
+        <div class="modal-dim">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2 class="modal-title">이용안내</h2>
+              <button class="modal-close">닫기</button>
+            </div>
+            <div class="modal-body">
+              <div class="alert-container">
+                <p class="alert-thumb">
+                  <img src="../static/assets/img/icon-info.png" alt="" />
+                </p>
+                <p class="main-txt">
+                  <strong>유효시간이 초과</strong>되었습니다.
+                </p>
+                <p class="desc-txt">처음부터 다시 시도해 주세요.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group">
+                <button class="c-btn-primary footer-btn modal-colse">
+                  완료
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 이용안내 유효시간초과 -->
+      <script>
+        // modal
+        const modalSection = document.querySelector("body");
+        const modals = document.querySelectorAll(".modal");
+        const modalClose = document.querySelectorAll(".modal-close");
+        if (modalSection) {
+          modalSection.addEventListener("click", (e) => {
+            const modalId = e.target.dataset.modal;
+            if (modalId) {
+              const modalLayer = document.getElementById(modalId);
+              modalLayer.classList.add("is-show");
+              modalSection.style.overflow = "hidden";
+            }
+          });
+
+          modalClose.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              modals.forEach((modal) => {
+                modal.classList.remove("is-show");
+                modalSection.removeAttribute("style");
+              });
+            });
+          });
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/assets/css/reset.css" />
+    <link rel="stylesheet" href="../static/assets/css/setting.css" />
+    <link rel="stylesheet" href="../static/assets/css/layout.css" />
+    <script defer src="../static/assets/js/common.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- header -->
+      <div class="header-wrap">
+        <header id="header" class="header-layout">
+          <!-- index 에서 보여질 로고 -->
+          <!-- <h1 class="header-logo">
+                            <a href="#">인재개발 플랫폼 Butter Time</a>
+                        </h1> -->
+          <!-- sub page 에서 보여질 로고 및 아이콘 -->
+          <div class="sub-header">
+            <a href="#" class="btn-logo-home">홈으로 이동</a>
+            <h1 class="title">콘텐츠 제목</h1>
+          </div>
+
+          <div class="header-response">
+            <div class="header-inner">
+              <nav class="gnb-area">
+                <ul class="gnb-menu">
+                  <li class="gnb-item"><a href="#">버터타임 소개</a></li>
+                  <li class="gnb-item"><a href="#">수강신청</a></li>
+                  <li class="gnb-item dropdown">
+                    <a href="#">나의 강의실</a>
+                    <div class="gnb-submenu-wrap">
+                      <ul class="gnb-submenu">
+                        <li><a href="#">학습현황</a></li>
+                        <li><a href="#">결제현황</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="gnb-item dropdown">
+                    <a href="#">고객센터</a>
+                    <div class="gnb-submenu-wrap">
+                      <ul class="gnb-submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="http://www.naver.com">1:1메뉴</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              <div class="header-infomenu">
+                <a href="#" class="c-btn-i-menu info">정보수정</a>
+                <a href="#" class="c-btn-i-menu logout">로그아웃</a>
+              </div>
+              <div class="header-sidemenu">
+                <a href="#" class="s-menu">이용약관</a>
+                <a href="#" class="s-menu"
+                  ><strong>개인정보 처리 방침</strong></a
+                >
+              </div>
+              <button class="btn-drawer-close">닫기</button>
+            </div>
+          </div>
+          <!-- only mobile  -->
+          <button class="btn-drawer-open">전체메뉴</button>
+        </header>
+      </div>
+      <!--//. header -->
+
+      <!-- section content -->
+      <div class="section-content">
+        <div class="section-middlearea">
+          <div class="section-title">
+            <h2 class="h2">1:1 문의 작성</h2>
+          </div>
+          <div class="content-box-shadow">
+            <p class="form-desc-txt"><i class="is-es"></i>필수 입력정보</p>
+            <div class="board-view">
+              <ul class="form-list">
+                <li>
+                  <label for="u-name" class="t-label"
+                    >이름<i class="is-es"></i
+                  ></label>
+                  <div class="inp-fieldset">
+                    <div class="inp-form column-name">
+                      <input
+                        type="text"
+                        id="u-name"
+                        class="t-inp"
+                        placeholder="이름을 입력해주세요"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <label for="u-id" class="t-label"
+                    >버터타임 아이디<i class="is-es"></i
+                  ></label>
+                  <div class="inp-fieldset">
+                    <div class="inp-form column-id">
+                      <input
+                        type="text"
+                        id="u-id"
+                        class="t-inp"
+                        placeholder="예시) username@buttertime.com"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li class="hr">
+                  <label for="u-phone-1" class="t-label"
+                    >휴대폰 번호<i class="is-es"></i
+                  ></label>
+                  <div class="inp-fieldset">
+                    <div class="inp-form column-tel">
+                      <input
+                        type="text"
+                        id="u-phone-1"
+                        class="t-inp tel"
+                        placeholder="010"
+                      />
+                      <input
+                        type="text"
+                        id="u-phone-2"
+                        class="t-inp tel"
+                        placeholder="1234"
+                      />
+                      <input
+                        type="text"
+                        id="u-phone-3"
+                        class="t-inp tel"
+                        placeholder="1234"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <span class="t-label">분류<i class="is-es"></i></span>
+                  <div class="inp-fieldset">
+                    <div class="custom-select w-335">
+                      <div class="select-btn">분류를 선택해 주세요</div>
+                      <ul class="select-option">
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-1"
+                            class="option-inp"
+                          />
+                          <label for="op-1" class="option-label"
+                            >서비스 개선제안</label
+                          >
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-2"
+                            class="option-inp"
+                          />
+                          <label for="op-2" class="option-label"
+                            >상품구매</label
+                          >
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-3"
+                            class="option-inp"
+                          />
+                          <label for="op-3" class="option-label">환불</label>
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-4"
+                            class="option-inp"
+                          />
+                          <label for="op-4" class="option-label"
+                            >학습시간</label
+                          >
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-5"
+                            class="option-inp"
+                          />
+                          <label for="op-5" class="option-label"
+                            >커리큘럼 및 학습 콘텐츠</label
+                          >
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-6"
+                            class="option-inp"
+                          />
+                          <label for="op-6" class="option-label"
+                            >앱 사용 방법</label
+                          >
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-7"
+                            class="option-inp"
+                          />
+                          <label for="op-7" class="option-label"
+                            >음성 인식 오류</label
+                          >
+                        </li>
+                        <li class="option-item">
+                          <input
+                            type="radio"
+                            name="oplist"
+                            id="op-8"
+                            class="option-inp"
+                          />
+                          <label for="op-8" class="option-label">기타</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <label for="u-title" class="t-label"
+                    >제목<i class="is-es"></i
+                  ></label>
+                  <div class="inp-fieldset">
+                    <div class="inp-form">
+                      <input
+                        type="text"
+                        id="u-title"
+                        class="t-inp"
+                        placeholder="예시) username@buttertime.com"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li class="hr">
+                  <label for="u-cont" class="t-label"
+                    >문의내용<i class="is-es"></i
+                  ></label>
+                  <div class="inp-fieldset">
+                    <div class="inp-form">
+                      <textarea
+                        name=""
+                        id="u-cont"
+                        rows="10"
+                        placeholder="문의하고자 하는 내용을 입력해주세요"
+                      ></textarea>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <span class="t-label t-label-file">첨부파일</span>
+                  <div class="inp-fieldset">
+                    <div class="file-wrap">
+                      <!-- <p class="txt">선택된 파일 없음</p> -->
+                      <ul class="file-list">
+                        <li class="file-item">파일명이들어가는곳.jpg</li>
+                        <li class="file-item">파일명이들어가는곳.jpg</li>
+                        <li class="file-item">
+                          버터타임 개인정보 수집 및 이용동의_2022.10.27.jpg
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="inp-form column-file">
+                      <!-- 2023-03-27 삭제 <input type="text" class="t-inp" value="선택된 파일 없음" disabled /> -->
+                      <label for="input-file" class="c-btn-file"
+                        ><i class="icon-plus"></i> 첨부파일 선택</label
+                      >
+                      <input
+                        type="file"
+                        id="input-file"
+                        name=""
+                        class="t-inp"
+                      />
+                    </div>
+                    <p class="file-info-txt">
+                      10MB 미만의 jpg, jpeg, png 형식의 파일 3개까지 첨부 가능
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group fixed-btn col-2">
+              <a href="#" class="c-btn-outline-l">취소</a>
+              <a href="#" class="c-btn-primary-l">등록</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. section content -->
+      <!-- footer -->
+      <div class="footer-wrap">
+        <footer class="footer-layout">
+          <div class="footer-head">
+            <div class="footer-inner">
+              <div class="f-logo">(주)엘지씨엔에스</div>
+              <ul class="f-side-menu">
+                <li><a href="" class="link-side">이용약관</a></li>
+                <li>
+                  <a href="" class="link-side"
+                    ><strong> 개인정보 처리 방침</strong></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-info">
+            <div class="footer-inner">
+              <dl class="f-com-info">
+                <dt>대표이사</dt>
+                <dd>김영섭</dd>
+                <dt>사업자등록번호</dt>
+                <dd>116-81-19477</dd>
+                <dt>개인정보 보호 책임자</dt>
+                <dd>이정무</dd>
+                <dt>사업자 주소</dt>
+                <dd>서울특별시 강서구 마곡중앙8로 71(마곡동)</dd>
+              </dl>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!--//. footer  -->
+    </div>
+  </body>
+</html>

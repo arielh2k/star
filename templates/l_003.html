@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko" class="popup">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/assets/css/reset.css" />
+    <link rel="stylesheet" href="../static/assets/css/setting.css" />
+    <link rel="stylesheet" href="../static/assets/css/layout.css" />
+    <script defer src="../static/assets/js/common.js"></script>
+  </head>
+  <body>
+    <!-- pc popup size - width: 595px, height: 540px -->
+    <div class="pop-wrap">
+      <!-- 학습확인증 출력 -->
+      <div class="cfl-container">
+        <div class="cfl-header">
+          <ul class="list-type-bullet">
+            <li>
+              학습 확인증의 <strong>내용은 임의 수정이 불가</strong>합니다.
+            </li>
+            <li>
+              <strong
+                >임의 수정으로 인해 발생하는 불이익에 대한 책임은 이용자
+                본인</strong
+              >에게 있습니다.
+            </li>
+            <li>인쇄는 PC에서만 가능합니다.(모바일 미지원)</li>
+          </ul>
+          <button class="c-btn-print" onclick="window.print()">인쇄하기</button>
+        </div>
+        <div class="cfl-area">
+          <div class="watermark">
+            <img src="../static/assets/img/bg-watermark.png" alt="" />
+          </div>
+          <div class="cfl-top">
+            <span class="top-logo">
+              <img
+                src="../static/assets/img/logo-buttertime-blue.svg"
+                alt="buttertime"
+            /></span>
+          </div>
+          <div class="cfl-contents">
+            <div class="cfl-title">학습 확인증</div>
+            <div class="cfl-row">
+              <ul class="option-list cfl-list">
+                <li class="option-item">
+                  <span class="label">성명 </span>
+                  <span class="cont"><strong>박수민</strong></span>
+                </li>
+                <li class="option-item block">
+                  <span class="label">교육 진행처 </span>
+                  <span class="cont">인사혁신처(인재개발 플랫폼) - LG CNS</span>
+                </li>
+                <li class="option-item block">
+                  <span class="label">과정명</span>
+                  <span class="cont"
+                    >[북클래스 구독] 베스트셀러 영어교재로 배우는
+                    영어회화_1개월</span
+                  >
+                </li>
+                <li class="option-item block">
+                  <span class="label">학습기간</span>
+                  <span class="cont">$YYYY-MM-DD ~ YYYY-MM-DD(n일)$</span>
+                </li>
+                <li class="option-item block">
+                  <span class="label">학습시간</span>
+                  <span class="cont">총 $h$시간 $m$분 $s$초</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cfl-info">
+              위 사람은 인사혁신처의<br />
+              <strong>[LG CNS]버터타임 서비스</strong>가 제공하는<br />
+              영어회화 학습을 이수했음을 증명합니다.
+            </div>
+            <div class="cfl-footer">
+              <p class="cfl-date">$YYYY년 MM월 DD일$</p>
+              <p class="cfl-sign">LG CNS 대표이사 현신균</p>
+              <div class="foot-logo">
+                <img src="../static/assets/img/logo-cns.svg" alt="LG CNS" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//. 학습확인증 출력 -->
+    </div>
+  </body>
+</html>
