@@ -1,166 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script defer src="tab.js"></script>
-    <style>
-      body {
-        background: #f4f4f4;
-      }
-      .btn {
-        padding: 0;
-        background: transparent;
-        border: 0;
-        outline: 0;
-      }
-      .clearfix::after {
-        display: block;
-        content: "";
-        clear: both;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script defer src="tab.js"></script>
+        <style>
+            body {
+                background: #f4f4f4;
+            }
+            .btn {
+                padding: 0;
+                background: transparent;
+                border: 0;
+                outline: 0;
+            }
+            .clearfix::after {
+                display: block;
+                content: "";
+                clear: both;
+            }
 
-      .tab_wrap {
-        width: 800px;
-        margin: 50px auto;
-      }
-      .tab_wrap .btn_tab {
-        float: left;
-        width: 120px;
-        height: 30px;
-        background: #fff;
-        border-radius: 10px 10px 0 0;
-        text-align: center;
-        line-height: 30px;
-      }
-      .tab_wrap .btn_tab.act {
-        background: #9adce2;
-        font-weight: bold;
-      }
-      .tab_wrap .content_area {
-        display: none;
-        width: 100%;
-        min-height: 200px;
-        padding: 10px;
-        background: #fff;
-        border-radius: 0 0 10px 10px;
-        box-sizing: border-box;
-      }
-      .tab_wrap .content_area.act {
-        display: block;
-      }
-      .tab_wrap *[data-depth="1"] {
-        background: #f4f4f4;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="tab_wrap tab_area">
-      <div class="btn_area clearfix">
-        <button class="btn btn_tab act" data-depth="0" data-idx="0">
-          First
-        </button>
-        <button class="btn btn_tab" data-depth="0" data-idx="1">Second</button>
-        <button class="btn btn_tab" data-depth="0" data-idx="2">Third</button>
-        <button class="btn btn_tab" data-depth="0" data-idx="3">Fourth</button>
-      </div>
+            .tab_wrap {
+                width: 800px;
+                margin: 50px auto;
+            }
+            .tab_wrap .btn_tab {
+                float: left;
+                width: 120px;
+                height: 30px;
+                background: #fff;
+                border-radius: 10px 10px 0 0;
+                text-align: center;
+                line-height: 30px;
+            }
+            .tab_wrap .btn_tab.act {
+                background: #9adce2;
+                font-weight: bold;
+            }
+            .tab_wrap .content_area {
+                display: none;
+                width: 100%;
+                min-height: 200px;
+                padding: 10px;
+                background: #fff;
+                border-radius: 0 0 10px 10px;
+                box-sizing: border-box;
+            }
+            .tab_wrap .content_area.act {
+                display: block;
+            }
+            .tab_wrap *[data-depth="1"] {
+                background: #f4f4f4;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // const tabWrap = document.querySelector(".tab-wrap");
 
-      <div class="content_area act" data-depth="0" data-idx="0">
-        First tab content
-      </div>
-      <div class="content_area" data-depth="0" data-idx="1">
-        <p>Second tab content</p>
-        <div class="tab_area">
-          <div class="btn_area clearfix">
-            <button class="btn btn_tab act" data-depth="1" data-idx="0">
-              First
-            </button>
-            <button class="btn btn_tab" data-depth="1" data-idx="1">
-              Second
-            </button>
-            <button class="btn btn_tab" data-depth="1" data-idx="2">
-              Third
-            </button>
-            <button class="btn btn_tab" data-depth="1" data-idx="3">
-              Fourth
-            </button>
-          </div>
+            // if (tabWrap) {
+            //     const tabs = document.querySelector(".main-tabs");
+            //     const tabBtns = document.querySelectorAll(".main-tabs .tab-btn");
+            //     const tabPanel = document.querySelectorAll(".tab-wrap > .tab-content");
 
-          <div class="content_area act" data-depth="1" data-idx="0">
-            2Depth First tab content
-          </div>
-          <div class="content_area" data-depth="1" data-idx="1">
-            2Depth Second tab content
-          </div>
-          <div class="content_area" data-depth="1" data-idx="2">
-            2Depth Third tab content
-          </div>
-          <div class="content_area" data-depth="1" data-idx="3">
-            2Depth Fourth tab content
-          </div>
+            //     const subTabs = document.querySelectorAll(".sub-tabs");
+            //     const subTabPanel = document.querySelectorAll(".tab-wrap > .tab-content .tab-content");
+
+            //     tabs.addEventListener("click", (e) => {
+            //         const id = e.target.dataset.id;
+
+            //         if (id) {
+            //             tabBtns.forEach((btn) => {
+            //                 btn.classList.remove("active");
+            //             });
+            //             e.target.classList.add("active");
+
+            //             tabPanel.forEach((panel) => {
+            //                 panel.classList.remove("active");
+            //             });
+            //             const el = document.getElementById(id);
+            //             el.classList.add("active");
+            //         }
+            //     });
+
+            //     subTabs.forEach((subTab) => {
+            //         subTab.addEventListener("click", (e) => {
+            //             const subTabBtns = subTab.querySelectorAll(".tab-btn");
+            //             const subTabId = e.target.dataset.id;
+
+            //             if (subTabId) {
+            //                 subTabBtns.forEach((btn) => {
+            //                     btn.classList.remove("active");
+            //                 });
+            //                 e.target.classList.add("active");
+
+            //                 subTabPanel.forEach((panel) => {
+            //                     panel.classList.remove("active");
+            //                 });
+            //                 const elSub = document.getElementById(subTabId);
+            //                 elSub.classList.add("active");
+            //             }
+            //         });
+            //     });
+            // }
+        </script>
+        <div class="tab_wrap tab_area">
+            <div class="btn_area clearfix">
+                <button class="btn btn_tab act" data-depth="0" data-idx="0">
+                    First
+                </button>
+                <button class="btn btn_tab" data-depth="0" data-idx="1">
+                    Second
+                </button>
+                <button class="btn btn_tab" data-depth="0" data-idx="2">
+                    Third
+                </button>
+                <button class="btn btn_tab" data-depth="0" data-idx="3">
+                    Fourth
+                </button>
+            </div>
+
+            <div class="content_area act" data-depth="0" data-idx="0">
+                First tab content
+            </div>
+            <div class="content_area" data-depth="0" data-idx="1">
+                <p>Second tab content</p>
+                <div class="tab_area">
+                    <div class="btn_area clearfix">
+                        <button
+                            class="btn btn_tab act"
+                            data-depth="1"
+                            data-idx="0"
+                        >
+                            First
+                        </button>
+                        <button class="btn btn_tab" data-depth="1" data-idx="1">
+                            Second
+                        </button>
+                        <button class="btn btn_tab" data-depth="1" data-idx="2">
+                            Third
+                        </button>
+                        <button class="btn btn_tab" data-depth="1" data-idx="3">
+                            Fourth
+                        </button>
+                    </div>
+
+                    <div class="content_area act" data-depth="1" data-idx="0">
+                        2Depth First tab content
+                    </div>
+                    <div class="content_area" data-depth="1" data-idx="1">
+                        2Depth Second tab content
+                    </div>
+                    <div class="content_area" data-depth="1" data-idx="2">
+                        2Depth Third tab content
+                    </div>
+                    <div class="content_area" data-depth="1" data-idx="3">
+                        2Depth Fourth tab content
+                    </div>
+                </div>
+            </div>
+            <div class="content_area" data-depth="0" data-idx="2">
+                <p>Third tab content</p>
+                <div class="tab_area">
+                    <div class="btn_area clearfix">
+                        <button
+                            class="btn btn_tab act"
+                            data-depth="1"
+                            data-idx="0"
+                        >
+                            First
+                        </button>
+                        <button class="btn btn_tab" data-depth="1" data-idx="1">
+                            Second
+                        </button>
+                        <button class="btn btn_tab" data-depth="1" data-idx="2">
+                            Third
+                        </button>
+                        <button class="btn btn_tab" data-depth="1" data-idx="3">
+                            Fourth
+                        </button>
+                    </div>
+
+                    <div class="content_area act" data-depth="1" data-idx="0">
+                        2Depth First tab content
+                    </div>
+                    <div class="content_area" data-depth="1" data-idx="1">
+                        2Depth Second tab content
+                    </div>
+                    <div class="content_area" data-depth="1" data-idx="2">
+                        2Depth Third tab content
+                    </div>
+                    <div class="content_area" data-depth="1" data-idx="3">
+                        2Depth Fourth tab content
+                    </div>
+                </div>
+            </div>
+            <div class="content_area" data-depth="0" data-idx="3">
+                Fourth tab content
+            </div>
         </div>
-      </div>
-      <div class="content_area" data-depth="0" data-idx="2">
-        <p>Third tab content</p>
-        <div class="tab_area">
-          <div class="btn_area clearfix">
-            <button class="btn btn_tab act" data-depth="1" data-idx="0">
-              First
-            </button>
-            <button class="btn btn_tab" data-depth="1" data-idx="1">
-              Second
-            </button>
-            <button class="btn btn_tab" data-depth="1" data-idx="2">
-              Third
-            </button>
-            <button class="btn btn_tab" data-depth="1" data-idx="3">
-              Fourth
-            </button>
-          </div>
 
-          <div class="content_area act" data-depth="1" data-idx="0">
-            2Depth First tab content
-          </div>
-          <div class="content_area" data-depth="1" data-idx="1">
-            2Depth Second tab content
-          </div>
-          <div class="content_area" data-depth="1" data-idx="2">
-            2Depth Third tab content
-          </div>
-          <div class="content_area" data-depth="1" data-idx="3">
-            2Depth Fourth tab content
-          </div>
+        <div class="tab_wrap tab_area">
+            <div class="btn_area clearfix">
+                <button class="btn btn_tab act" data-depth="0" data-idx="0">
+                    First
+                </button>
+                <button class="btn btn_tab" data-depth="0" data-idx="1">
+                    Second
+                </button>
+                <button class="btn btn_tab" data-depth="0" data-idx="2">
+                    Third
+                </button>
+                <button class="btn btn_tab" data-depth="0" data-idx="3">
+                    Fourth
+                </button>
+            </div>
+
+            <div class="content_area act" data-depth="0" data-idx="0">
+                First tab content
+            </div>
+            <div class="content_area" data-depth="0" data-idx="1">
+                Second tab content
+            </div>
+            <div class="content_area" data-depth="0" data-idx="2">
+                Third tab content
+            </div>
+            <div class="content_area" data-depth="0" data-idx="3">
+                Fourth tab content
+            </div>
         </div>
-      </div>
-      <div class="content_area" data-depth="0" data-idx="3">
-        Fourth tab content
-      </div>
-    </div>
-
-    <div class="tab_wrap tab_area">
-      <div class="btn_area clearfix">
-        <button class="btn btn_tab act" data-depth="0" data-idx="0">
-          First
-        </button>
-        <button class="btn btn_tab" data-depth="0" data-idx="1">Second</button>
-        <button class="btn btn_tab" data-depth="0" data-idx="2">Third</button>
-        <button class="btn btn_tab" data-depth="0" data-idx="3">Fourth</button>
-      </div>
-
-      <div class="content_area act" data-depth="0" data-idx="0">
-        First tab content
-      </div>
-      <div class="content_area" data-depth="0" data-idx="1">
-        Second tab content
-      </div>
-      <div class="content_area" data-depth="0" data-idx="2">
-        Third tab content
-      </div>
-      <div class="content_area" data-depth="0" data-idx="3">
-        Fourth tab content
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
